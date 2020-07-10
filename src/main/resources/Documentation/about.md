@@ -1,0 +1,1 @@
+This plugin sends Gerrit metrics to Cloud Watch in AWS.
