@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "96856c5a_34a5d125",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-10T06:47:24Z",
+      "side": 1,
+      "message": "We (GerritForge) would like to resume this work and make a first initial fully working version of this metrics plugin :-)",
+      "revId": "90d27f3e9457a7889a4c1247dc199f9ab3f70a1c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
