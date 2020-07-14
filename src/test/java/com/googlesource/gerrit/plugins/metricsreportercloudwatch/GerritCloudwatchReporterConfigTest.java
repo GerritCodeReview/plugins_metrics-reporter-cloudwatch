@@ -23,6 +23,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
+import java.util.Arrays;
 
 @RunWith(MockitoJUnitRunner.class)
 public class GerritCloudwatchReporterConfigTest {
@@ -63,5 +64,20 @@ public class GerritCloudwatchReporterConfigTest {
     assertThat(reporterConfig.getNamespace()).isEqualTo("foobar");
     assertThat(reporterConfig.getRate()).isEqualTo(180);
     assertThat(reporterConfig.getDryRun()).isTrue();
+  }
+
+  @Test
+  public void shouldReadCorrectExclusionFilter() {
+    PluginConfig globalPluginConfig = emptyGlobalPluginConfig;
+    globalPluginConfig.setStringList(
+        GerritCloudwatchReporterConfig.KEY_EXCLUDE_METRICS,
+        Arrays.asList("foo.*", ".*bar"));
+
+    when(configFactory.getFromGerritConfig(PLUGIN_NAME)).thenReturn(globalPluginConfig);
+    reporterConfig = new GerritCloudwatchReporterConfig(configFactory, PLUGIN_NAME);
+
+    assertThat(reporterConfig.getExclusionFilter().test("foo/metrics/for/testing")).isTrue();
+    assertThat(reporterConfig.getExclusionFilter().test("foo/metrics/for/bar")).isTrue();
+    assertThat(reporterConfig.getExclusionFilter().test("any/other/metric")).isFalse();
   }
 }
