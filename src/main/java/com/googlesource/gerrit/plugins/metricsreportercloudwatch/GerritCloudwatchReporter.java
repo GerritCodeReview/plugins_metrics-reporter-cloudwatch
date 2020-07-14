@@ -13,7 +13,6 @@
 // limitations under the License.
 package com.googlesource.gerrit.plugins.metricsreportercloudwatch;
 
-import com.codahale.metrics.MetricFilter;
 import com.codahale.metrics.MetricRegistry;
 import com.google.common.flogger.FluentLogger;
 import com.google.gerrit.extensions.events.LifecycleListener;
@@ -44,7 +43,7 @@ public class GerritCloudwatchReporter implements LifecycleListener {
                 registry, cloudWatchAsyncClientBuilder.build(), config.getNamespace())
             .convertRatesTo(TimeUnit.SECONDS)
             .convertDurationsTo(TimeUnit.MILLISECONDS)
-            .filter(MetricFilter.ALL)
+            .filter(config.getExclusionFilter())
             .withZeroValuesSubmission()
             .withReportRawCountValue()
             .withHighResolution();
