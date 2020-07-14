@@ -16,6 +16,649 @@
       "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6df14b4b_5b5a6e0f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "Very good job Tony, please find some comments, mainly related to the question of why do we need such a complex configuration at start.\n\nAlso, I am missing at least *ONE* integration test, where we start the Gerrit daemon and use the plugin.",
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "43f240fb_33f2703f",
+        "filename": "BUILD",
+        "patchSetId": 11
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "nit: empty line",
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3a83de1d_68ebfbe4",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchModule.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "Why not simply use the LifecycleModule, which has been introduced to remove the listener-related boilerplate?",
+      "range": {
+        "startLine": 20,
+        "startChar": 44,
+        "endLine": 20,
+        "endChar": 58
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "505a5ecd_7598b09d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "We typically use injection to instantiate objects, having then globalPluginConfig and gerritConfig being directly populated by Guice. Is there are particular reason why it shouldn\u0027t be used here?",
+      "range": {
+        "startLine": 48,
+        "startChar": 13,
+        "endLine": 48,
+        "endChar": 47
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1c669d8f_0398d0e7",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "This doesn\u0027t look a canonical way of using the Optional\u003c\u003e IMHO: why not just using an ifPresent() instead?",
+      "range": {
+        "startLine": 52,
+        "startChar": 8,
+        "endLine": 52,
+        "endChar": 46
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "86d70f59_0a152b64",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "Same as above",
+      "range": {
+        "startLine": 56,
+        "startChar": 8,
+        "endLine": 56,
+        "endChar": 51
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7c0071e3_0485cda8",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "How can cloudWatchReporter be null? It is final and is initialised in the constructor at L76. The build() method returns a newly created object, which is always not null. If the object creation fails, it won\u0027t return null anyway.",
+      "range": {
+        "startLine": 81,
+        "startChar": 8,
+        "endLine": 81,
+        "endChar": 34
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e2a2d56d_2268be5a",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "If cloudWatchReporter would be null (but I doubt it), we should raise a runtime exception correct? The plugin won\u0027t work without it.",
+      "range": {
+        "startLine": 88,
+        "startChar": 6,
+        "endLine": 88,
+        "endChar": 77
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "974272e1_ce0cf49b",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "See the same comment as before: how can this be null?",
+      "range": {
+        "startLine": 94,
+        "startChar": 8,
+        "endLine": 94,
+        "endChar": 34
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "56aa6f34_90945abc",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporterConfig.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "pluginConfig? This isn\u0027t really the Gerrit config, isn\u0027t it?",
+      "range": {
+        "startLine": 48,
+        "startChar": 80,
+        "endLine": 48,
+        "endChar": 92
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a1c6275e_d5c35c40",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "It would be best NOT use the @PLUGIN@ expansion here: these are the instructions on how to build the plugin, so if you need to read them it means the plugin isn\u0027t built yet and isn\u0027t loaded, therefore the macro @PLUGIN@ won\u0027t be expanded :-(",
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06a76180_0c0eb4ac",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "Not needed",
+      "range": {
+        "startLine": 11,
+        "startChar": 2,
+        "endLine": 11,
+        "endChar": 29
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d3a29b28_6c8ffada",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "-sf",
+      "range": {
+        "startLine": 12,
+        "startChar": 5,
+        "endLine": 12,
+        "endChar": 7
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a9c9fa3a_dab2c7d5",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "run?",
+      "range": {
+        "startLine": 15,
+        "startChar": 5,
+        "endLine": 15,
+        "endChar": 10
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8156740a_0468a617",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "bazelisk",
+      "range": {
+        "startLine": 18,
+        "startChar": 2,
+        "endLine": 18,
+        "endChar": 7
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b73d1f4f_b5c58712",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "bazelisk test plugins/metrics-reporter-cloudwatch/...",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 31
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "62ac5d23_e7d04bd8",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "Why two different places?",
+      "range": {
+        "startLine": 3,
+        "startChar": 52,
+        "endLine": 3,
+        "endChar": 96
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fe1cd127_be90a3f3",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "nit: wrap long line",
+      "range": {
+        "startLine": 9,
+        "startChar": 80,
+        "endLine": 9,
+        "endChar": 111
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "64ff2830_3f3c49fa",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "nit: wrap long line",
+      "range": {
+        "startLine": 10,
+        "startChar": 80,
+        "endLine": 10,
+        "endChar": 95
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dbb775ca_37038fcc",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "nit: wrap long line",
+      "range": {
+        "startLine": 11,
+        "startChar": 80,
+        "endLine": 11,
+        "endChar": 102
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eded48a6_a0c0f4ea",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "We typically use the imperative, impersonal form. \"Find the ...\"",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 7
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "05b5b64d_a95df0e7",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "What would be the reason of NOT using the canonical way of defining the AWS credentials?",
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b7a6658e_ea1cd18d",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "nit: wrap long line",
+      "range": {
+        "startLine": 17,
+        "startChar": 80,
+        "endLine": 17,
+        "endChar": 98
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9e523be7_e84646db",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "nit: wrap long line",
+      "range": {
+        "startLine": 19,
+        "startChar": 80,
+        "endLine": 19,
+        "endChar": 90
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a8e2bddb_45d507ca",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "This isn\u0027t the way AWS typically stores them: is that a typical AWS deployment scenario?",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 3
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b546ac7c_79c3b957",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "Is it better to use INFO instead? So that they can be clearly visible on the error_log?",
+      "range": {
+        "startLine": 37,
+        "startChar": 56,
+        "endLine": 37,
+        "endChar": 61
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "597e29cc_45b592bd",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "nit: space",
+      "range": {
+        "startLine": 37,
+        "startChar": 118,
+        "endLine": 37,
+        "endChar": 120
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fc0880b3_fbea0b22",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "If someone forgets the dry-run activated and also does not raise the log level, then he will risk to put the plugin live without sending any metrics at all.\n\nWhy not just displaying the metrics at INFO level instead? It\u0027s just for the purpose of a dry-run and should never be used in a production environment anyway.",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 3
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e14b2678_d2ec380d",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-14T11:16:13Z",
+      "side": 1,
+      "message": "Why the default has the form \u0027Ns\u0027 while the example has a different form? For the sake of extra clarity, we should keep consistency between the two.",
+      "range": {
+        "startLine": 57,
+        "startChar": 15,
+        "endLine": 57,
+        "endChar": 24
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
