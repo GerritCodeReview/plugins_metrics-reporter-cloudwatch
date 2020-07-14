@@ -16,8 +16,14 @@ package com.googlesource.gerrit.plugins.metricsreportercloudwatch;
 import com.google.gerrit.server.config.ConfigUtil;
 import org.eclipse.jgit.lib.Config;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Predicate;
+import java.util.regex.Pattern;
+
+import static java.util.stream.Collectors.toList;
 
 class GerritCloudwatchReporterConfig {
 
@@ -27,6 +33,7 @@ class GerritCloudwatchReporterConfig {
   protected static final String KEY_RATE = "rate";
   protected static final String KEY_DRYRUN = "dryRun";
   protected static final String KEY_INITIAL_DELAY = "initialDelay";
+  protected static final String KEY_EXCLUDE_METRICS = "excludeMetrics";
 
   protected static final String DEFAULT_NAMESPACE = "gerrit";
   protected static final Boolean DEFAULT_DRY_RUN = false;
@@ -37,6 +44,7 @@ class GerritCloudwatchReporterConfig {
   private final String namespace;
   private final int initialDelay;
   private final Boolean dryRun;
+  private final List<Pattern> excludedMetricPatterns;
 
   public GerritCloudwatchReporterConfig(Config globalPluginConfig) throws IllegalStateException {
 
@@ -66,6 +74,12 @@ class GerritCloudwatchReporterConfig {
                 KEY_INITIAL_DELAY,
                 DEFAULT_INITIAL_DELAY_SECS,
                 TimeUnit.SECONDS);
+
+    this.excludedMetricPatterns =
+        Arrays.stream(
+                globalPluginConfig.getStringList(SECTION_CLOUDWATCH, null, KEY_EXCLUDE_METRICS))
+            .map(Pattern::compile)
+            .collect(toList());
   }
 
   public int getRate() {
@@ -82,5 +96,9 @@ class GerritCloudwatchReporterConfig {
 
   public Boolean getDryRun() {
     return dryRun;
+  }
+
+  public Predicate<String> getExclusionFilter() {
+    return s -> excludedMetricPatterns.stream().anyMatch(e -> e.matcher(s).matches());
   }
 }

@@ -16,6 +16,8 @@ package com.googlesource.gerrit.plugins.metricsreportercloudwatch;
 import org.eclipse.jgit.lib.Config;
 import org.junit.Test;
 
+import java.util.Arrays;
+
 import static com.google.common.truth.Truth.assertThat;
 
 public class GerritCloudwatchReporterConfigTest {
@@ -67,5 +69,21 @@ public class GerritCloudwatchReporterConfigTest {
     assertThat(reporterConfig.getNamespace()).isEqualTo("foobar");
     assertThat(reporterConfig.getRate()).isEqualTo(180);
     assertThat(reporterConfig.getDryRun()).isTrue();
+  }
+
+  @Test
+  public void shouldReadCorrectExclusionFilter() {
+    Config globalPluginConfig = emptyGlobalPluginConfig;
+    globalPluginConfig.setStringList(
+        GerritCloudwatchReporterConfig.SECTION_CLOUDWATCH,
+        null,
+        GerritCloudwatchReporterConfig.KEY_EXCLUDE_METRICS,
+        Arrays.asList("foo.*", ".*bar"));
+
+    reporterConfig = new GerritCloudwatchReporterConfig(globalPluginConfig);
+
+    assertThat(reporterConfig.getExclusionFilter().test("foo/metrics/for/testing")).isTrue();
+    assertThat(reporterConfig.getExclusionFilter().test("foo/metrics/for/bar")).isTrue();
+    assertThat(reporterConfig.getExclusionFilter().test("any/other/metric")).isFalse();
   }
 }
