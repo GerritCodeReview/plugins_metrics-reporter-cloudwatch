@@ -13,18 +13,27 @@
 // limitations under the License.
 package com.googlesource.gerrit.plugins.metricsreportercloudwatch;
 
+import com.codahale.metrics.MetricFilter;
 import com.google.gerrit.extensions.annotations.PluginName;
 import com.google.gerrit.server.config.ConfigUtil;
 import com.google.gerrit.server.config.PluginConfig;
 import com.google.gerrit.server.config.PluginConfigFactory;
 import com.google.inject.Inject;
+
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Predicate;
+import java.util.regex.Pattern;
+
+import static java.util.stream.Collectors.toList;
 
 class GerritCloudwatchReporterConfig {
   protected static final String KEY_NAMESPACE = "namespace";
   protected static final String KEY_RATE = "rate";
   protected static final String KEY_DRYRUN = "dryRun";
   protected static final String KEY_INITIAL_DELAY = "initialDelay";
+  protected static final String KEY_EXCLUDE_METRICS = "excludeMetrics";
 
   protected static final String DEFAULT_NAMESPACE = "gerrit";
   protected static final String DEFAULT_EMPTY_STRING = "";
@@ -36,6 +45,7 @@ class GerritCloudwatchReporterConfig {
   private final String namespace;
   private final int initialDelay;
   private final Boolean dryRun;
+  private final MetricFilter exclusionFilter;
 
   @Inject
   public GerritCloudwatchReporterConfig(
@@ -59,6 +69,9 @@ class GerritCloudwatchReporterConfig {
                 pluginConfig.getString(KEY_INITIAL_DELAY, DEFAULT_EMPTY_STRING),
                 DEFAULT_INITIAL_DELAY_SECS,
                 TimeUnit.SECONDS);
+
+    this.exclusionFilter =
+            buildExclusionFilter(pluginConfig.getStringList(KEY_EXCLUDE_METRICS));
   }
 
   public int getRate() {
@@ -75,5 +88,18 @@ class GerritCloudwatchReporterConfig {
 
   public Boolean getDryRun() {
     return dryRun;
+  }
+
+  public MetricFilter getExclusionFilter() {
+    return exclusionFilter;
+  }
+
+  private MetricFilter buildExclusionFilter(String[] exclusionList) {
+    final List<Pattern> excludedMetricPatterns =
+        Arrays.stream(exclusionList).map(Pattern::compile).collect(toList());
+
+    Predicate<String> filter =
+        s -> excludedMetricPatterns.stream().anyMatch(e -> e.matcher(s).matches());
+    return (s, metric) -> !filter.test(s);
   }
 }
