@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ee22afd5_8e2c5e43",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T12:55:26Z",
+      "side": 1,
+      "message": "Thanks for the review @luca.\nSure I can look at adding integration tests on top of the unit tests ones.\n\nP.S. fun fact: none of the metrics-reporter-* that exists at the moment has any test at all.",
+      "parentUuid": "6df14b4b_5b5a6e0f",
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "43f240fb_33f2703f",
         "filename": "BUILD",
         "patchSetId": 11
@@ -50,6 +68,24 @@
       "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6a8b4dd6_6194cef8",
+        "filename": "BUILD",
+        "patchSetId": 11
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T12:55:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "43f240fb_33f2703f",
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     },
     {
       "key": {
@@ -76,6 +112,30 @@
     },
     {
       "key": {
+        "uuid": "0c11ea20_0e284df5",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchModule.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T12:55:26Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "3a83de1d_68ebfbe4",
+      "range": {
+        "startLine": 20,
+        "startChar": 44,
+        "endLine": 20,
+        "endChar": 58
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "505a5ecd_7598b09d",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
         "patchSetId": 11
@@ -87,6 +147,30 @@
       "writtenOn": "2020-07-14T11:16:13Z",
       "side": 1,
       "message": "We typically use injection to instantiate objects, having then globalPluginConfig and gerritConfig being directly populated by Guice. Is there are particular reason why it shouldn\u0027t be used here?",
+      "range": {
+        "startLine": 48,
+        "startChar": 13,
+        "endLine": 48,
+        "endChar": 47
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "02dbea9d_d9338180",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T12:55:26Z",
+      "side": 1,
+      "message": "Oh interesting: what\u0027s the benefit of injecting the configs over injecting the configFactory to generate them?",
+      "parentUuid": "505a5ecd_7598b09d",
       "range": {
         "startLine": 48,
         "startChar": 13,
@@ -122,6 +206,30 @@
     },
     {
       "key": {
+        "uuid": "1360dba0_03eb88e1",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T12:55:26Z",
+      "side": 1,
+      "message": "Mutating a non final variable in a lambda is not allowed, the compiler complains with:\n\"Variable used in lambda expression should be final or effectively final\" [1]\n\nif you don\u0027t like the syntax I used, I could use a setter to achieve the same, or perhaps map() over the result and side-effect to mutate the variable.\n\nWDTY?\n\n[1]https://www.baeldung.com/java-lambda-effectively-final-local-variables",
+      "parentUuid": "1c669d8f_0398d0e7",
+      "range": {
+        "startLine": 52,
+        "startChar": 8,
+        "endLine": 52,
+        "endChar": 46
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "86d70f59_0a152b64",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
         "patchSetId": 11
@@ -142,6 +250,30 @@
       "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3c8b01e8_eb841cf0",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T12:55:26Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "86d70f59_0a152b64",
+      "range": {
+        "startLine": 56,
+        "startChar": 8,
+        "endLine": 56,
+        "endChar": 51
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     },
     {
       "key": {
@@ -168,6 +300,30 @@
     },
     {
       "key": {
+        "uuid": "496729dd_43b257e7",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T12:55:26Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7c0071e3_0485cda8",
+      "range": {
+        "startLine": 81,
+        "startChar": 8,
+        "endLine": 81,
+        "endChar": 34
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e2a2d56d_2268be5a",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
         "patchSetId": 11
@@ -188,6 +344,30 @@
       "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "151dbf9f_64d0b6f8",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T12:55:26Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e2a2d56d_2268be5a",
+      "range": {
+        "startLine": 88,
+        "startChar": 6,
+        "endLine": 88,
+        "endChar": 77
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     },
     {
       "key": {
@@ -214,6 +394,30 @@
     },
     {
       "key": {
+        "uuid": "3d7c3abd_ea5c5c11",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T12:55:26Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "974272e1_ce0cf49b",
+      "range": {
+        "startLine": 94,
+        "startChar": 8,
+        "endLine": 94,
+        "endChar": 34
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "56aa6f34_90945abc",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporterConfig.java",
         "patchSetId": 11
@@ -225,6 +429,30 @@
       "writtenOn": "2020-07-14T11:16:13Z",
       "side": 1,
       "message": "pluginConfig? This isn\u0027t really the Gerrit config, isn\u0027t it?",
+      "range": {
+        "startLine": 48,
+        "startChar": 80,
+        "endLine": 48,
+        "endChar": 92
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "39ca6633_5c7b0208",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporterConfig.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T12:55:26Z",
+      "side": 1,
+      "message": "I originally named it \"pluginConfig\" as you suggested, but then I found it difficult to distinguish from the \"globalPluginConfig\", which is the config obtained by looking at \"pluginName.config\".\n\n\"gerritConfig\" is the configuration obtained by calling getFromGerritConfig(), which is why I named it \"gerritConfig\".\n\nWhat do you suggest to name these? globalPluginConfig and pluginConfig?",
+      "parentUuid": "56aa6f34_90945abc",
       "range": {
         "startLine": 48,
         "startChar": 80,
@@ -392,6 +620,30 @@
     },
     {
       "key": {
+        "uuid": "361d70f6_2919b903",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T12:55:26Z",
+      "side": 1,
+      "message": "The reason I am using two is to leverage secure.config.\n\n- gerrit.config to hold credentials (AFAIK, secure.config only gets merged to gerrit.config right?)\n- @PLUGIN@.config to hold metrics configuration\n\nUnless there any other way to securely store credentials in @PLUGIN@.config?",
+      "parentUuid": "62ac5d23_e7d04bd8",
+      "range": {
+        "startLine": 3,
+        "startChar": 52,
+        "endLine": 3,
+        "endChar": 96
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "fe1cd127_be90a3f3",
         "filename": "src/main/resources/Documentation/config.md",
         "patchSetId": 11
@@ -412,6 +664,30 @@
       "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d7ca9ebc_0d511edb",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T12:55:26Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "fe1cd127_be90a3f3",
+      "range": {
+        "startLine": 9,
+        "startChar": 80,
+        "endLine": 9,
+        "endChar": 111
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     },
     {
       "key": {
@@ -438,6 +714,30 @@
     },
     {
       "key": {
+        "uuid": "2875541d_3e9d6690",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T12:55:26Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "64ff2830_3f3c49fa",
+      "range": {
+        "startLine": 10,
+        "startChar": 80,
+        "endLine": 10,
+        "endChar": 95
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dbb775ca_37038fcc",
         "filename": "src/main/resources/Documentation/config.md",
         "patchSetId": 11
@@ -461,6 +761,30 @@
     },
     {
       "key": {
+        "uuid": "97810ac8_2c8defd1",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T12:55:26Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "dbb775ca_37038fcc",
+      "range": {
+        "startLine": 11,
+        "startChar": 80,
+        "endLine": 11,
+        "endChar": 102
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "eded48a6_a0c0f4ea",
         "filename": "src/main/resources/Documentation/config.md",
         "patchSetId": 11
@@ -481,6 +805,30 @@
       "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52a41aae_9e2c19d4",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T12:55:26Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "eded48a6_a0c0f4ea",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 7
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     },
     {
       "key": {
@@ -524,6 +872,24 @@
     },
     {
       "key": {
+        "uuid": "f5e2afc2_0a2a0093",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T12:55:26Z",
+      "side": 1,
+      "message": "The idea was not to make assumptions on the possible deployment environments and deployment methods different Gerrit users/companies might have.\n\nThe user running Gerrit might not have a home directory for ~/.aws/credentials for example (or perhaps the provisioning mechanism does not allow to store files outside gerrit directory).\nOr perhaps usage of environment variables is discouraged for some reason.\n\nI think these and others are the very reasons why setting static credentials is supported by the AWS SDK in the first place and I think this plugin should adhere to that apprroach.",
+      "parentUuid": "05b5b64d_a95df0e7",
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9e523be7_e84646db",
         "filename": "src/main/resources/Documentation/config.md",
         "patchSetId": 11
@@ -547,6 +913,30 @@
     },
     {
       "key": {
+        "uuid": "c5260e2b_3e126021",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T12:55:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9e523be7_e84646db",
+      "range": {
+        "startLine": 19,
+        "startChar": 80,
+        "endLine": 19,
+        "endChar": 90
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a8e2bddb_45d507ca",
         "filename": "src/main/resources/Documentation/config.md",
         "patchSetId": 11
@@ -558,6 +948,30 @@
       "writtenOn": "2020-07-14T11:16:13Z",
       "side": 1,
       "message": "This isn\u0027t the way AWS typically stores them: is that a typical AWS deployment scenario?",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 3
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ec3c5169_d2b56c84",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T12:55:26Z",
+      "side": 1,
+      "message": "see my previous replies",
+      "parentUuid": "a8e2bddb_45d507ca",
       "range": {
         "startLine": 22,
         "startChar": 0,
@@ -616,6 +1030,54 @@
     },
     {
       "key": {
+        "uuid": "cd388a01_18e4e211",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T12:55:26Z",
+      "side": 1,
+      "message": "When in dry mode, the underlying library [1] will output a WARN which ends up in the error_log\n\n[2020-07-13 18:47:20,645] [metrics-coda-hale-metrics-cloud-watch-reporter-1-thread-1] WARN  io.github.azagniotov.metrics.reporter.cloudwatch.CloudWatchReporter : ** Reporter is running in \u0027DRY RUN\u0027 mode **\n\n[1]https://github.com/azagniotov/codahale-aggregated-metrics-cloudwatch-reporter",
+      "parentUuid": "b546ac7c_79c3b957",
+      "range": {
+        "startLine": 37,
+        "startChar": 56,
+        "endLine": 37,
+        "endChar": 61
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1d3a2aa9_13c4d19c",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T12:55:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "597e29cc_45b592bd",
+      "range": {
+        "startLine": 37,
+        "startChar": 118,
+        "endLine": 37,
+        "endChar": 120
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fc0880b3_fbea0b22",
         "filename": "src/main/resources/Documentation/config.md",
         "patchSetId": 11
@@ -639,6 +1101,30 @@
     },
     {
       "key": {
+        "uuid": "287a54ab_fb9b89ac",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T12:55:26Z",
+      "side": 1,
+      "message": "See above, the library is already outputting a WARN, when in dry run mode.",
+      "parentUuid": "fc0880b3_fbea0b22",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 3
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e14b2678_d2ec380d",
         "filename": "src/main/resources/Documentation/config.md",
         "patchSetId": 11
@@ -659,6 +1145,30 @@
       "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0ad608dd_0cf497c7",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T12:55:26Z",
+      "side": 1,
+      "message": "oh ok, I did it explicitly to highlight that *both* syntaxes are valid.\nBut I see your point, I\u0027ll amend that.",
+      "parentUuid": "e14b2678_d2ec380d",
+      "range": {
+        "startLine": 57,
+        "startChar": 15,
+        "endLine": 57,
+        "endChar": 24
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
