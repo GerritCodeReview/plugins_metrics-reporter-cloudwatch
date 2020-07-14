@@ -1,13 +1,9 @@
 {
   "checks": {
     "zuul-check:plugins_metrics-reporter-cloudwatch": {
-      "state": "NOT_RELEVANT",
-      "message": "Project has no jobs configured",
-      "url": "https://ci.gerritcodereview.com/t/gerrit/buildset/d7c14782fcc44d7b99551ed50117b985",
-      "started": "2020-07-14T09:47:17Z",
-      "finished": "2020-07-14T09:47:19Z",
+      "state": "NOT_STARTED",
       "created": "2020-07-14T09:47:17Z",
-      "updated": "2020-07-14T09:47:19Z"
+      "updated": "2020-07-14T11:33:55Z"
     }
   }
 }
