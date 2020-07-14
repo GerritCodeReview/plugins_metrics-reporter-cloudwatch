@@ -482,6 +482,24 @@
     },
     {
       "key": {
+        "uuid": "d897d645_6d15c9c3",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T13:06:09Z",
+      "side": 1,
+      "message": "ok gotcha. I will fix this.",
+      "parentUuid": "a1c6275e_d5c35c40",
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "06a76180_0c0eb4ac",
         "filename": "src/main/resources/Documentation/build.md",
         "patchSetId": 11
@@ -502,6 +520,30 @@
       "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "79db379c_395695f8",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T13:06:09Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "06a76180_0c0eb4ac",
+      "range": {
+        "startLine": 11,
+        "startChar": 2,
+        "endLine": 11,
+        "endChar": 29
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     },
     {
       "key": {
@@ -528,6 +570,30 @@
     },
     {
       "key": {
+        "uuid": "645662ce_c9c8da4c",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T13:06:09Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d3a29b28_6c8ffada",
+      "range": {
+        "startLine": 12,
+        "startChar": 5,
+        "endLine": 12,
+        "endChar": 7
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a9c9fa3a_dab2c7d5",
         "filename": "src/main/resources/Documentation/build.md",
         "patchSetId": 11
@@ -548,6 +614,30 @@
       "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b0ede6ec_96897ce1",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T13:06:09Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a9c9fa3a_dab2c7d5",
+      "range": {
+        "startLine": 15,
+        "startChar": 5,
+        "endLine": 15,
+        "endChar": 10
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     },
     {
       "key": {
@@ -574,6 +664,30 @@
     },
     {
       "key": {
+        "uuid": "5f45df66_eb85c9eb",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T13:06:09Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8156740a_0468a617",
+      "range": {
+        "startLine": 18,
+        "startChar": 2,
+        "endLine": 18,
+        "endChar": 7
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b73d1f4f_b5c58712",
         "filename": "src/main/resources/Documentation/build.md",
         "patchSetId": 11
@@ -594,6 +708,30 @@
       "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6191e5d5_d29dcdfb",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T13:06:09Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b73d1f4f_b5c58712",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 31
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     },
     {
       "key": {
@@ -887,6 +1025,30 @@
       "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "15bac138_5002fd97",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T13:06:09Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b7a6658e_ea1cd18d",
+      "range": {
+        "startLine": 17,
+        "startChar": 80,
+        "endLine": 17,
+        "endChar": 98
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     },
     {
       "key": {
