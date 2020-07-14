@@ -85,6 +85,22 @@ public class MetricsReporterCloudwatchIT extends LightweightPluginDaemonTest {
                 .anyMatch(l -> l.contains("Value=" + TEST_METRIC_INCREMENT)));
   }
 
+  @Test
+  @GerritConfig(name = "plugin.metrics-reporter-cloudwatch.dryrun", value = "true")
+  @GerritConfig(
+      name = "plugin.metrics-reporter-cloudwatch.excludeMetrics",
+      value = TEST_METRIC_NAME)
+  @GerritConfig(name = "plugin.metrics-reporter-cloudwatch.rate", value = TEST_TIMEOUT)
+  public void shouldExcludeMetrics() throws Exception {
+    InMemoryLoggerAppender dryRunMetricsOutput = newInMemoryLogger();
+
+    waitUntil(
+        () ->
+            dryRunMetricsOutput
+                .metricsStream()
+                .noneMatch(l -> l.contains("MetricName=" + TEST_METRIC_NAME)));
+  }
+
   private static InMemoryLoggerAppender newInMemoryLogger() {
     InMemoryLoggerAppender dryRunMetricsOutput = new InMemoryLoggerAppender();
     for (Enumeration<?> logger = LogManager.getCurrentLoggers(); logger.hasMoreElements(); ) {
