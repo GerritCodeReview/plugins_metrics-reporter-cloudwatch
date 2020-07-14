@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "2d9fe67c_54d81924",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T15:21:31Z",
+      "side": 1,
+      "message": "Localstack would be the best candidate I think.\nit\u0027s also available via testcontainers.\n\nI am not sure we want to go as far as sending the metrics to cloudwatch. I would have the IT test running in dry-run mode to be honest. We leave the responsibility to POST to CW, the underlying library.\n\nWDYT?",
+      "parentUuid": "18b6b95b_6da5af22",
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "43f240fb_33f2703f",
         "filename": "BUILD",
         "patchSetId": 11

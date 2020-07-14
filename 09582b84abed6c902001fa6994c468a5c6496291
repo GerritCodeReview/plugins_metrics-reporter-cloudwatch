@@ -22,6 +22,30 @@
       "revId": "09582b84abed6c902001fa6994c468a5c6496291",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c41d731f_d52d5d21",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T15:21:31Z",
+      "side": 1,
+      "message": "Yep if the credentials are not statically provided, the default credentials provider will be used. It is documented, if it\u0027s not clear shall I make it more obvious?",
+      "parentUuid": "c6e9bffa_be2014eb",
+      "range": {
+        "startLine": 50,
+        "startChar": 64,
+        "endLine": 50,
+        "endChar": 96
+      },
+      "revId": "09582b84abed6c902001fa6994c468a5c6496291",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
