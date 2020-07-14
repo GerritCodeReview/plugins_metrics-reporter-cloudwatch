@@ -70,6 +70,30 @@
       "revId": "09582b84abed6c902001fa6994c468a5c6496291",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a021d0db_2caa49f9",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-14T17:10:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f9ef6284_be8e2713",
+      "range": {
+        "startLine": 50,
+        "startChar": 64,
+        "endLine": 50,
+        "endChar": 96
+      },
+      "revId": "09582b84abed6c902001fa6994c468a5c6496291",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
