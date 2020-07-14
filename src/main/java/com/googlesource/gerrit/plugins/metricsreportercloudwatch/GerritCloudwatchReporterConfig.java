@@ -18,8 +18,14 @@ import com.google.gerrit.server.config.PluginConfig;
 import org.eclipse.jgit.lib.Config;
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Predicate;
+import java.util.regex.Pattern;
+
+import static java.util.stream.Collectors.toList;
 
 class GerritCloudwatchReporterConfig {
 
@@ -32,6 +38,7 @@ class GerritCloudwatchReporterConfig {
   protected static final String KEY_ACCESS_KEY_ID = "accessKeyId";
   protected static final String KEY_SECRET_KEY_ID = "secretKeyId";
   protected static final String KEY_REGION = "region";
+  protected static final String KEY_EXCLUDE_METRICS = "excludeMetrics";
 
   protected static final String DEFAULT_NAMESPACE = "gerrit";
   protected static final Boolean DEFAULT_DRY_RUN = false;
@@ -42,6 +49,7 @@ class GerritCloudwatchReporterConfig {
   private final String namespace;
   private final int initialDelay;
   private final Boolean dryRun;
+  private final List<Pattern> excludedMetricPatterns;
   private final Optional<String> maybeAWSRegion;
   private final Optional<AwsBasicCredentials> maybeAWSCredentials;
 
@@ -56,7 +64,7 @@ class GerritCloudwatchReporterConfig {
             .orElse(DEFAULT_NAMESPACE);
 
     this.dryRun =
-            globalPluginConfig.getBoolean(SECTION_CLOUDWATCH, null, KEY_DRYRUN, DEFAULT_DRY_RUN);
+        globalPluginConfig.getBoolean(SECTION_CLOUDWATCH, null, KEY_DRYRUN, DEFAULT_DRY_RUN);
 
     this.rate =
         (int)
@@ -77,6 +85,12 @@ class GerritCloudwatchReporterConfig {
                 KEY_INITIAL_DELAY,
                 DEFAULT_INITIAL_DELAY_SECS,
                 TimeUnit.SECONDS);
+
+    this.excludedMetricPatterns =
+        Arrays.stream(
+                globalPluginConfig.getStringList(SECTION_CLOUDWATCH, null, KEY_EXCLUDE_METRICS))
+            .map(Pattern::compile)
+            .collect(toList());
   }
 
   private Optional<AwsBasicCredentials> maybeAWSCredentials(PluginConfig gerritConfig)
@@ -117,5 +131,9 @@ class GerritCloudwatchReporterConfig {
 
   public Boolean getDryRun() {
     return dryRun;
+  }
+
+  public Predicate<String> getExclusionFilter() {
+    return s -> excludedMetricPatterns.stream().anyMatch(e -> e.matcher(s).matches());
   }
 }

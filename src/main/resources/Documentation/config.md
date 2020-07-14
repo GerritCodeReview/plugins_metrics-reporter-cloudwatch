@@ -60,3 +60,8 @@ ssh -p <port> admin@<server> gerrit logging set-level debug io.github.azagniotov
     * Type: Time
     * Default: "0"
     * Example: 60 seconds
+
+* `cloudwatch.excludeMetrics` (Optional): Regex pattern used to exclude metrics from the report. It can be specified multiple times.
+Note that pattern matching is done on the whole metric name, not only on a part of it.
+    * Type: String
+    * Example: "plugins.*"
