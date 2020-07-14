@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "18b6b95b_6da5af22",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2020-07-14T15:01:49Z",
+      "side": 1,
+      "message": "If you want to run integration tests with a running instance of CW, I know there are docker images to run your AWS stack locally. This is a (bad) example: https://github.com/nearform/docker-cloudwatch\n\nI remember I have seen the official AWS version...I can have a better look if you think it is a viable solution.",
+      "parentUuid": "ee22afd5_8e2c5e43",
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "43f240fb_33f2703f",
         "filename": "BUILD",
         "patchSetId": 11
