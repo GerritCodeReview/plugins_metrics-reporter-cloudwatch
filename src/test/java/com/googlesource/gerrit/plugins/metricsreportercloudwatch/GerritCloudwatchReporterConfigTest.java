@@ -18,6 +18,7 @@ import org.eclipse.jgit.lib.Config;
 import org.junit.Test;
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
 
+import java.util.Arrays;
 import java.util.Optional;
 
 import static com.google.common.truth.Truth.assertThat;
@@ -42,7 +43,7 @@ public class GerritCloudwatchReporterConfigTest {
     assertThat(reporterConfig.getRate())
         .isEqualTo(GerritCloudwatchReporterConfig.DEFAULT_RATE_SECS);
     assertThat(reporterConfig.getDryRun())
-            .isEqualTo(GerritCloudwatchReporterConfig.DEFAULT_DRY_RUN);
+        .isEqualTo(GerritCloudwatchReporterConfig.DEFAULT_DRY_RUN);
   }
 
   @Test
@@ -64,10 +65,10 @@ public class GerritCloudwatchReporterConfigTest {
         GerritCloudwatchReporterConfig.KEY_INITIAL_DELAY,
         "20s");
     globalPluginConfig.setBoolean(
-            GerritCloudwatchReporterConfig.SECTION_CLOUDWATCH,
-            null,
-            GerritCloudwatchReporterConfig.KEY_DRYRUN,
-            true);
+        GerritCloudwatchReporterConfig.SECTION_CLOUDWATCH,
+        null,
+        GerritCloudwatchReporterConfig.KEY_DRYRUN,
+        true);
 
     reporterConfig = new GerritCloudwatchReporterConfig(globalPluginConfig, emptyGerritConfig);
 
@@ -111,5 +112,21 @@ public class GerritCloudwatchReporterConfigTest {
     reporterConfig = new GerritCloudwatchReporterConfig(emptyGlobalPluginConfig, gerritConfig);
 
     assertThat(reporterConfig.getMaybeAWSRegion()).isEqualTo(Optional.of("eu-west-1"));
+  }
+
+  @Test
+  public void shouldReadCorrectExclusionFilter() {
+    Config globalPluginConfig = emptyGlobalPluginConfig;
+    globalPluginConfig.setStringList(
+        GerritCloudwatchReporterConfig.SECTION_CLOUDWATCH,
+        null,
+        GerritCloudwatchReporterConfig.KEY_EXCLUDE_METRICS,
+        Arrays.asList("foo.*", ".*bar"));
+
+    reporterConfig = new GerritCloudwatchReporterConfig(globalPluginConfig, emptyGerritConfig);
+
+    assertThat(reporterConfig.getExclusionFilter().test("foo/metrics/for/testing")).isTrue();
+    assertThat(reporterConfig.getExclusionFilter().test("foo/metrics/for/bar")).isTrue();
+    assertThat(reporterConfig.getExclusionFilter().test("any/other/metric")).isFalse();
   }
 }
