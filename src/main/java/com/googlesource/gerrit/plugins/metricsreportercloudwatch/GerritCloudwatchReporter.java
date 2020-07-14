@@ -13,15 +13,15 @@
 // limitations under the License.
 package com.googlesource.gerrit.plugins.metricsreportercloudwatch;
 
-import com.codahale.metrics.MetricFilter;
 import com.codahale.metrics.MetricRegistry;
 import com.google.common.flogger.FluentLogger;
 import com.google.gerrit.extensions.events.LifecycleListener;
 import com.google.inject.Inject;
 import io.github.azagniotov.metrics.reporter.cloudwatch.CloudWatchReporter;
-import java.util.concurrent.TimeUnit;
 import software.amazon.awssdk.services.cloudwatch.CloudWatchAsyncClient;
 import software.amazon.awssdk.services.cloudwatch.CloudWatchAsyncClientBuilder;
+
+import java.util.concurrent.TimeUnit;
 
 public class GerritCloudwatchReporter implements LifecycleListener {
 
@@ -44,7 +44,7 @@ public class GerritCloudwatchReporter implements LifecycleListener {
                 registry, cloudWatchAsyncClientBuilder.build(), config.getNamespace())
             .convertRatesTo(TimeUnit.SECONDS)
             .convertDurationsTo(TimeUnit.MILLISECONDS)
-            .filter(MetricFilter.ALL)
+            .filter(config.getExclusionFilter())
             .withZeroValuesSubmission()
             .withReportRawCountValue()
             .withHighResolution();
