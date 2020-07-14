@@ -87,6 +87,24 @@ public class MetricsReporterCloudwatchIT extends LightweightPluginDaemonTest {
     waitUntil(() -> dryRunMetricsOutput.getResult().contains("MetricName=" + TEST_METRIC_NAME));
   }
 
+  @Test
+  @GerritConfig(name = "plugin.metrics-reporter-cloudwatch.dryrun", value = "true")
+  @GerritConfig(name = "plugin.metrics-reporter-cloudwatch.excludeMetrics", value = TEST_METRIC_NAME)
+  @GerritConfig(name = "plugin.metrics-reporter-cloudwatch.rate", value = TEST_TIMEOUT)
+  public void shouldExcludeMetrics() throws Exception {
+    InMemoryLoggerAppender excludedMetricsOutput = new InMemoryLoggerAppender();
+    for (Enumeration<?> logger = LogManager.getCurrentLoggers(); logger.hasMoreElements(); ) {
+      Logger log = (Logger) logger.nextElement();
+      if (log.getName().contains("CloudWatchReporter")) {
+        log.addAppender(excludedMetricsOutput);
+        log.setLevel(Level.DEBUG);
+      }
+    }
+
+    Thread.sleep(5000L);
+    waitUntil(() -> !excludedMetricsOutput.getResult().contains("MetricName=" + TEST_METRIC_NAME));
+  }
+
   private static void waitUntil(Supplier<Boolean> waitCondition) throws InterruptedException {
     Stopwatch stopwatch = Stopwatch.createStarted();
     while (!waitCondition.get()) {

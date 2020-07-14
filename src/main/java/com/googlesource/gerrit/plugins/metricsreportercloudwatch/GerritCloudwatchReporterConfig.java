@@ -13,18 +13,27 @@
 // limitations under the License.
 package com.googlesource.gerrit.plugins.metricsreportercloudwatch;
 
+import com.codahale.metrics.MetricFilter;
 import com.google.gerrit.extensions.annotations.PluginName;
 import com.google.gerrit.server.config.ConfigUtil;
 import com.google.gerrit.server.config.PluginConfig;
 import com.google.gerrit.server.config.PluginConfigFactory;
 import com.google.inject.Inject;
+
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Predicate;
+import java.util.regex.Pattern;
+
+import static java.util.stream.Collectors.toList;
 
 class GerritCloudwatchReporterConfig {
   protected static final String KEY_NAMESPACE = "namespace";
   protected static final String KEY_RATE = "rate";
   protected static final String KEY_DRYRUN = "dryRun";
   protected static final String KEY_INITIAL_DELAY = "initialDelay";
+  protected static final String KEY_EXCLUDE_METRICS = "excludeMetrics";
 
   protected static final String DEFAULT_NAMESPACE = "gerrit";
   protected static final Boolean DEFAULT_DRY_RUN = false;
@@ -35,6 +44,7 @@ class GerritCloudwatchReporterConfig {
   private final String namespace;
   private final int initialDelay;
   private final Boolean dryRun;
+  private final List<Pattern> excludedMetricPatterns;
 
   @Inject
   public GerritCloudwatchReporterConfig(
@@ -56,6 +66,11 @@ class GerritCloudwatchReporterConfig {
                 pluginConfig.getString(KEY_INITIAL_DELAY, ""),
                 DEFAULT_INITIAL_DELAY_SECS,
                 TimeUnit.SECONDS);
+
+    this.excludedMetricPatterns =
+        Arrays.stream(pluginConfig.getStringList(KEY_EXCLUDE_METRICS))
+            .map(Pattern::compile)
+            .collect(toList());
   }
 
   public int getRate() {
@@ -72,5 +87,11 @@ class GerritCloudwatchReporterConfig {
 
   public Boolean getDryRun() {
     return dryRun;
+  }
+
+  public MetricFilter getExclusionFilter() {
+    Predicate<String> exclusionFilter =
+        s -> excludedMetricPatterns.stream().anyMatch(e -> e.matcher(s).matches());
+    return (s, metric) -> !exclusionFilter.test(s);
   }
 }
