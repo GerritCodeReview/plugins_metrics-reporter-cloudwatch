@@ -14,10 +14,15 @@
 package com.googlesource.gerrit.plugins.metricsreportercloudwatch;
 
 import static com.google.common.truth.Truth.assertThat;
+import static com.google.gerrit.testing.GerritJUnit.assertThrows;
 import static org.mockito.Mockito.when;
 
+import com.codahale.metrics.Counter;
+import com.codahale.metrics.MetricFilter;
 import com.google.gerrit.server.config.PluginConfig;
 import com.google.gerrit.server.config.PluginConfigFactory;
+import java.util.Arrays;
+import java.util.regex.PatternSyntaxException;
 import org.eclipse.jgit.lib.Config;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -63,5 +68,36 @@ public class GerritCloudwatchReporterConfigTest {
     assertThat(reporterConfig.getNamespace()).isEqualTo("foobar");
     assertThat(reporterConfig.getRate()).isEqualTo(180);
     assertThat(reporterConfig.getDryRun()).isTrue();
+  }
+
+  @Test
+  public void shouldReadCorrectExclusionFilter() {
+    PluginConfig globalPluginConfig = emptyGlobalPluginConfig;
+    globalPluginConfig.setStringList(
+        GerritCloudwatchReporterConfig.KEY_EXCLUDE_METRICS, Arrays.asList("foo.*", ".*bar"));
+
+    when(configFactory.getFromGerritConfig(PLUGIN_NAME)).thenReturn(globalPluginConfig);
+    reporterConfig = new GerritCloudwatchReporterConfig(configFactory, PLUGIN_NAME);
+
+    MetricFilter exclusionFilter = reporterConfig.getExclusionFilter();
+    assertThat(exclusionFilter.matches("foo/metrics/for/testing", new Counter())).isFalse();
+    assertThat(exclusionFilter.matches("some/metrics/for/bar", new Counter())).isFalse();
+    assertThat(exclusionFilter.matches("any/other/metric", new Counter())).isTrue();
+  }
+
+  @Test
+  public void shouldThrowAnExceptionWhenExcludeMetricsRegexIsNotValid() {
+    final String INVALID_REGEXP = "[[?";
+    PluginConfig globalPluginConfig = emptyGlobalPluginConfig;
+    globalPluginConfig.setString(
+        GerritCloudwatchReporterConfig.KEY_EXCLUDE_METRICS, INVALID_REGEXP);
+
+    when(configFactory.getFromGerritConfig(PLUGIN_NAME)).thenReturn(globalPluginConfig);
+
+    assertThrows(
+        PatternSyntaxException.class,
+        () -> {
+          new GerritCloudwatchReporterConfig(configFactory, PLUGIN_NAME);
+        });
   }
 }

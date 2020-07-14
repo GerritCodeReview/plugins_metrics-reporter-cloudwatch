@@ -14,6 +14,7 @@
 
 package com.googlesource.gerrit.plugins.metricsreportercloudwatch;
 
+import static com.google.gerrit.testing.GerritJUnit.assertThrows;
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
 import com.google.common.base.Splitter;
@@ -83,6 +84,26 @@ public class MetricsReporterCloudwatchIT extends LightweightPluginDaemonTest {
                 .metricsStream()
                 .filter(l -> l.contains("MetricName=" + TEST_METRIC_NAME))
                 .anyMatch(l -> l.contains("Value=" + TEST_METRIC_INCREMENT)));
+  }
+
+  @Test
+  @GerritConfig(name = "plugin.metrics-reporter-cloudwatch.dryrun", value = "true")
+  @GerritConfig(
+      name = "plugin.metrics-reporter-cloudwatch.excludeMetrics",
+      value = TEST_METRIC_NAME)
+  @GerritConfig(name = "plugin.metrics-reporter-cloudwatch.rate", value = TEST_TIMEOUT)
+  public void shouldExcludeMetrics() {
+    InMemoryLoggerAppender dryRunMetricsOutput = newInMemoryLogger();
+
+    assertThrows(
+        InterruptedException.class,
+        () -> {
+          waitUntil(
+              () ->
+                  dryRunMetricsOutput
+                      .metricsStream()
+                      .anyMatch(l -> l.contains("MetricName=" + TEST_METRIC_NAME)));
+        });
   }
 
   private static InMemoryLoggerAppender newInMemoryLogger() {
