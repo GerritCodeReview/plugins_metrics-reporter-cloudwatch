@@ -1,11 +1,13 @@
 {
   "checks": {
     "zuul-check:plugins_metrics-reporter-cloudwatch": {
-      "state": "RUNNING",
-      "message": "Jobs have started running",
+      "state": "SUCCESSFUL",
+      "message": "Change passed all voting jobs",
+      "url": "https://ci.gerritcodereview.com/t/gerrit/buildset/a98d45393b5b426f894d841033a33efd",
       "started": "2020-07-14T11:40:17Z",
+      "finished": "2020-07-14T11:49:22Z",
       "created": "2020-07-14T11:40:17Z",
-      "updated": "2020-07-14T11:40:19Z"
+      "updated": "2020-07-14T11:49:22Z"
     }
   }
 }
