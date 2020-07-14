@@ -1,11 +1,13 @@
 {
   "checks": {
     "zuul-check:plugins_metrics-reporter-cloudwatch": {
-      "state": "SCHEDULED",
-      "message": "Change has been enqueued in check",
+      "state": "NOT_RELEVANT",
+      "message": "Project has no jobs configured",
+      "url": "https://ci.gerritcodereview.com/t/gerrit/buildset/fd798b1b3ff04cdf8cfe0de2d01dde2b",
       "started": "2020-07-14T09:47:17Z",
+      "finished": "2020-07-14T09:47:21Z",
       "created": "2020-07-14T09:47:18Z",
-      "updated": "2020-07-14T09:47:18Z"
+      "updated": "2020-07-14T09:47:21Z"
     }
   }
 }
