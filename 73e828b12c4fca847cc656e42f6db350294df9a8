@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4cd90528_fdad085e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-16T17:58:54Z",
+      "side": 1,
+      "message": "We do need some basic integration testing: it fails to load E2E, but the tests are green, which is bad. Let me add a very basic integration test in the next PS.\n\n@Tony is that OK for you?",
+      "revId": "73e828b12c4fca847cc656e42f6db350294df9a8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "950eec74_597d44cf",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchModule.java",
+        "patchSetId": 14
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-16T17:58:54Z",
+      "side": 1,
+      "message": "Why not simply leave to Guice the injection of PluginConfigFactory and the plugin name to the GerritCloudwatchReporterConfig? You would also avoid the unusual binding at L36, where we inject directly the instance, instead of relying on a Singleton.",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 73
+      },
+      "revId": "73e828b12c4fca847cc656e42f6db350294df9a8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
