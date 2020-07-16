@@ -597,6 +597,30 @@
     },
     {
       "key": {
+        "uuid": "94c489d9_890c9701",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporterConfig.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-16T09:08:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aa4c39c9_ac1c4a47",
+      "range": {
+        "startLine": 48,
+        "startChar": 80,
+        "endLine": 48,
+        "endChar": 92
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a1c6275e_d5c35c40",
         "filename": "src/main/resources/Documentation/build.md",
         "patchSetId": 11
@@ -962,6 +986,30 @@
     },
     {
       "key": {
+        "uuid": "be73531b_34fb101b",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-16T09:08:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "98839e1d_5ddfc9e2",
+      "range": {
+        "startLine": 3,
+        "startChar": 52,
+        "endLine": 3,
+        "endChar": 96
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fe1cd127_be90a3f3",
         "filename": "src/main/resources/Documentation/config.md",
         "patchSetId": 11
@@ -1268,6 +1316,24 @@
     },
     {
       "key": {
+        "uuid": "499157fc_83c9fc83",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-16T09:08:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e0a0394_dfa9f4b3",
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9e523be7_e84646db",
         "filename": "src/main/resources/Documentation/config.md",
         "patchSetId": 11
@@ -1359,6 +1425,30 @@
       "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06c9e6e9_a61be327",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-16T09:08:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ec3c5169_d2b56c84",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 3
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     },
     {
       "key": {
