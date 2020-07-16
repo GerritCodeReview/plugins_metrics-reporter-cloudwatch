@@ -243,6 +243,30 @@
     },
     {
       "key": {
+        "uuid": "294a47ec_d36a9c1c",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-16T08:39:59Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "faab1f6a_e1956da7",
+      "range": {
+        "startLine": 48,
+        "startChar": 13,
+        "endLine": 48,
+        "endChar": 47
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1c669d8f_0398d0e7",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
         "patchSetId": 11
@@ -537,6 +561,30 @@
       "side": 1,
       "message": "I originally named it \"pluginConfig\" as you suggested, but then I found it difficult to distinguish from the \"globalPluginConfig\", which is the config obtained by looking at \"pluginName.config\".\n\n\"gerritConfig\" is the configuration obtained by calling getFromGerritConfig(), which is why I named it \"gerritConfig\".\n\nWhat do you suggest to name these? globalPluginConfig and pluginConfig?",
       "parentUuid": "56aa6f34_90945abc",
+      "range": {
+        "startLine": 48,
+        "startChar": 80,
+        "endLine": 48,
+        "endChar": 92
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa4c39c9_ac1c4a47",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporterConfig.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-16T08:39:59Z",
+      "side": 1,
+      "message": "@luca, ping: Any advice on naming?",
+      "parentUuid": "39ca6633_5c7b0208",
       "range": {
         "startLine": 48,
         "startChar": 80,
@@ -890,6 +938,30 @@
     },
     {
       "key": {
+        "uuid": "98839e1d_5ddfc9e2",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-16T08:39:59Z",
+      "side": 1,
+      "message": "ideally yes, the secret access key should be treated as a password and it should be stored securely. And secure.config is where passwords are kept right?\n\nAnyway, as you requested we are not going to provide this functionality, so it doean\u0027t matter.",
+      "parentUuid": "65ffd502_cf1fc305",
+      "range": {
+        "startLine": 3,
+        "startChar": 52,
+        "endLine": 3,
+        "endChar": 96
+      },
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "fe1cd127_be90a3f3",
         "filename": "src/main/resources/Documentation/config.md",
         "patchSetId": 11
@@ -1172,6 +1244,24 @@
       "side": 1,
       "message": "Ack, but I would keep the first version of the plugin KISS: if someone would require to put the AWS credentials in secure.config, they could ask for it :-)\n\nI won\u0027t necessarily add that complexity if nobody requested it.\n\nP.S. I believe we are going to be the very first people who need this for the aws-gerrit project: do we need it?",
       "parentUuid": "f5e2afc2_0a2a0093",
+      "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7e0a0394_dfa9f4b3",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-16T08:39:59Z",
+      "side": 1,
+      "message": "I will remove it.",
+      "parentUuid": "27042354_d6e9e03d",
       "revId": "9f3f73e19cdec4089cb8d36fe30ce3fbb6558971",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
