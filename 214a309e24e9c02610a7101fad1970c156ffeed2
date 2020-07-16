@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "912f79cc_2090b2cf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-16T22:40:10Z",
+      "side": 1,
+      "message": "This works locally (unit and ITs) and end-to-end. Waiting for Tony for the final validation.",
+      "revId": "214a309e24e9c02610a7101fad1970c156ffeed2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
