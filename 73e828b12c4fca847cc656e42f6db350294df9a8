@@ -39,6 +39,29 @@
       "revId": "73e828b12c4fca847cc656e42f6db350294df9a8",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "45d53078_3e457be8",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-16T19:45:54Z",
+      "side": 1,
+      "message": "We typically require a separate config file when there are lots of config settings in different groups. However, here we just have three settings in a single group.\n\nIt makes more sense to just have a [plugin \"metrics-reporter-cloudwatch\"] section in gerrit.config with the relevant settings, so that we do not proliferate the configs and make the code and the tests easier.\n\nI can address the concern in the next PS. Feel free to revert it if you don\u0027t like it :-)",
+      "range": {
+        "startLine": 3,
+        "startChar": 56,
+        "endLine": 3,
+        "endChar": 73
+      },
+      "revId": "73e828b12c4fca847cc656e42f6db350294df9a8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
