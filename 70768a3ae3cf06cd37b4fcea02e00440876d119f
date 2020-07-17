@@ -102,6 +102,30 @@
     },
     {
       "key": {
+        "uuid": "efa19b81_3296d9d9",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
+        "patchSetId": 21
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2020-07-17T13:56:08Z",
+      "side": 1,
+      "message": "I agree but with this injection we can test  GerritCloudwatchReporter with unit tests and we don\u0027t need extra code for testing and if you check follow up changes we are adding more and more variables just for testing. But I don\u0027want to block this CR because it\u0027s needed. I can prepare change on top of this chain to remove all that unnecessary code.",
+      "parentUuid": "a6aeefc0_23f011ee",
+      "range": {
+        "startLine": 41,
+        "startChar": 4,
+        "endLine": 41,
+        "endChar": 96
+      },
+      "revId": "70768a3ae3cf06cd37b4fcea02e00440876d119f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ee67595f_24afba86",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
         "patchSetId": 21
@@ -184,6 +208,30 @@
       "side": 1,
       "message": "mmm ... String.nullToEmpty() is very verbose and not readable either. What about replacing the \"\" with a EMPTY_STRING constant? So that is clear that the default is empty. WDYT?",
       "parentUuid": "f4835425_2ecb80cf",
+      "range": {
+        "startLine": 51,
+        "startChar": 16,
+        "endLine": 51,
+        "endChar": 52
+      },
+      "revId": "70768a3ae3cf06cd37b4fcea02e00440876d119f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7d31c105_efd8a6da",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporterConfig.java",
+        "patchSetId": 21
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2020-07-17T13:56:08Z",
+      "side": 1,
+      "message": "Fine for me",
+      "parentUuid": "16c6cb79_47d0296a",
       "range": {
         "startLine": 51,
         "startChar": 16,
