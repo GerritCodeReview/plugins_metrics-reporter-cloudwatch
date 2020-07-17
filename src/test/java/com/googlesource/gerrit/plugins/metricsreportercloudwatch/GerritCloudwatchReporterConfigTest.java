@@ -51,6 +51,8 @@ public class GerritCloudwatchReporterConfigTest {
         .isEqualTo(GerritCloudwatchReporterConfig.DEFAULT_RATE_SECS);
     assertThat(reporterConfig.getDryRun())
         .isEqualTo(GerritCloudwatchReporterConfig.DEFAULT_DRY_RUN);
+    assertThat(reporterConfig.getJvmMetrics())
+            .isEqualTo(GerritCloudwatchReporterConfig.DEFAULT_JVM_METRICS);
   }
 
   @Test
@@ -60,6 +62,7 @@ public class GerritCloudwatchReporterConfigTest {
     globalPluginConfig.setString(GerritCloudwatchReporterConfig.KEY_RATE, "3m");
     globalPluginConfig.setString(GerritCloudwatchReporterConfig.KEY_INITIAL_DELAY, "20s");
     globalPluginConfig.setBoolean(GerritCloudwatchReporterConfig.KEY_DRYRUN, true);
+    globalPluginConfig.setBoolean(GerritCloudwatchReporterConfig.KEY_JVM_METRICS, true);
 
     when(configFactory.getFromGerritConfig(PLUGIN_NAME)).thenReturn(globalPluginConfig);
     reporterConfig = new GerritCloudwatchReporterConfig(configFactory, PLUGIN_NAME);
@@ -68,6 +71,7 @@ public class GerritCloudwatchReporterConfigTest {
     assertThat(reporterConfig.getNamespace()).isEqualTo("foobar");
     assertThat(reporterConfig.getRate()).isEqualTo(180);
     assertThat(reporterConfig.getDryRun()).isTrue();
+    assertThat(reporterConfig.getJvmMetrics()).isTrue();
   }
 
   @Test

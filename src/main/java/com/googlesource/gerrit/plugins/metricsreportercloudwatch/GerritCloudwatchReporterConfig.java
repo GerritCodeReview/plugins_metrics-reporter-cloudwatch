@@ -33,10 +33,12 @@ class GerritCloudwatchReporterConfig {
   protected static final String KEY_DRYRUN = "dryRun";
   protected static final String KEY_INITIAL_DELAY = "initialDelay";
   protected static final String KEY_EXCLUDE_METRICS = "excludeMetrics";
+  protected static final String KEY_JVM_METRICS = "jvmMetrics";
 
   protected static final String DEFAULT_NAMESPACE = "gerrit";
   protected static final String DEFAULT_EMPTY_STRING = "";
   protected static final Boolean DEFAULT_DRY_RUN = false;
+  protected static final Boolean DEFAULT_JVM_METRICS = false;
   protected static final Long DEFAULT_RATE_SECS = 60L;
   protected static final Integer DEFAULT_INITIAL_DELAY_SECS = 0;
 
@@ -45,6 +47,7 @@ class GerritCloudwatchReporterConfig {
   private final int initialDelay;
   private final Boolean dryRun;
   private final MetricFilter exclusionFilter;
+  private final Boolean jvmMetrics;
 
   @Inject
   public GerritCloudwatchReporterConfig(
@@ -54,6 +57,8 @@ class GerritCloudwatchReporterConfig {
     this.namespace = pluginConfig.getString(KEY_NAMESPACE, DEFAULT_NAMESPACE);
 
     this.dryRun = pluginConfig.getBoolean(KEY_DRYRUN, DEFAULT_DRY_RUN);
+
+    this.jvmMetrics = pluginConfig.getBoolean(KEY_JVM_METRICS, DEFAULT_JVM_METRICS);
 
     this.rate =
         (int)
@@ -90,6 +95,10 @@ class GerritCloudwatchReporterConfig {
 
   public MetricFilter getExclusionFilter() {
     return exclusionFilter;
+  }
+
+  public boolean getJvmMetrics() {
+    return jvmMetrics;
   }
 
   private MetricFilter buildExclusionFilter(String[] exclusionList) {
