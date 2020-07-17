@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "bc8ae205_5bf5832a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 21
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2020-07-17T08:35:31Z",
+      "side": 1,
+      "message": "Could we try to inject the builder and simplify the tests?",
+      "revId": "70768a3ae3cf06cd37b4fcea02e00440876d119f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "105a04c3_08ba017e",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
         "patchSetId": 21
