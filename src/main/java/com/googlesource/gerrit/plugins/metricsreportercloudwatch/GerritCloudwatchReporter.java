@@ -31,6 +31,7 @@ public class GerritCloudwatchReporter implements LifecycleListener {
   private final GerritCloudwatchReporterConfig config;
   private boolean started;
   private boolean dryRun;
+  private boolean jvmMetrics;
 
   @Inject
   public GerritCloudwatchReporter(GerritCloudwatchReporterConfig config, MetricRegistry registry)
@@ -52,6 +53,11 @@ public class GerritCloudwatchReporter implements LifecycleListener {
     if (config.getDryRun()) {
       cloudWatchReporterBuilder = cloudWatchReporterBuilder.withDryRun();
       dryRun = true;
+    }
+
+    if (config.getJvmMetrics()) {
+      cloudWatchReporterBuilder = cloudWatchReporterBuilder.withJvmMetrics();
+      jvmMetrics = true;
     }
 
     cloudWatchReporter = cloudWatchReporterBuilder.build();
@@ -81,5 +87,10 @@ public class GerritCloudwatchReporter implements LifecycleListener {
   @VisibleForTesting
   public boolean isDryRun() {
     return dryRun;
+  }
+
+  @VisibleForTesting
+  public boolean isJVMMetrics() {
+    return jvmMetrics;
   }
 }
