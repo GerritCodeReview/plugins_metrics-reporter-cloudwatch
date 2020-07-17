@@ -16,6 +16,29 @@
       "revId": "1befc86d7014f513135e95298921db937d05f63a",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5c857258_adaa53bb",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/MetricsReporterCloudwatchIT.java",
+        "patchSetId": 25
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-17T16:23:31Z",
+      "side": 1,
+      "message": "Can use the function reference here",
+      "range": {
+        "startLine": 132,
+        "startChar": 39,
+        "endLine": 132,
+        "endChar": 81
+      },
+      "revId": "1befc86d7014f513135e95298921db937d05f63a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
