@@ -49,6 +49,10 @@ public class GerritCloudwatchReporter implements LifecycleListener {
       cloudWatchReporterBuilder = cloudWatchReporterBuilder.withDryRun();
     }
 
+    if (config.getJvmMetrics()) {
+      cloudWatchReporterBuilder = cloudWatchReporterBuilder.withJvmMetrics();
+    }
+
     cloudWatchReporter = cloudWatchReporterBuilder.build();
   }
 
