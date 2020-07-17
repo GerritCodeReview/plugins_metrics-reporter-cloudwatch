@@ -78,6 +78,30 @@
     },
     {
       "key": {
+        "uuid": "a6aeefc0_23f011ee",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
+        "patchSetId": 21
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-17T12:47:39Z",
+      "side": 1,
+      "message": "The purpose of the integration test is to test the system without mocks: if we mock AWS/Cloudwatch part we won\u0027t be able to spot errors that we found:\n- Missing Jackson dependencies\n- Missing AWS zone property in tests\n\nChecking the logs wasn\u0027t nice, but it was the only way to verify that the machinery integrated worked, until we start using a real mocked CloudWatch metrics container.",
+      "parentUuid": "105a04c3_08ba017e",
+      "range": {
+        "startLine": 41,
+        "startChar": 4,
+        "endLine": 41,
+        "endChar": 96
+      },
+      "revId": "70768a3ae3cf06cd37b4fcea02e00440876d119f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee67595f_24afba86",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
         "patchSetId": 21
@@ -98,6 +122,30 @@
       "revId": "70768a3ae3cf06cd37b4fcea02e00440876d119f",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "59695560_dfe0bb14",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
+        "patchSetId": 21
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-17T12:47:39Z",
+      "side": 1,
+      "message": "It should report only once at startup, why do you believe it would SPAM the logs?",
+      "parentUuid": "ee67595f_24afba86",
+      "range": {
+        "startLine": 63,
+        "startChar": 11,
+        "endLine": 63,
+        "endChar": 17
+      },
+      "revId": "70768a3ae3cf06cd37b4fcea02e00440876d119f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     },
     {
       "key": {
@@ -124,6 +172,30 @@
     },
     {
       "key": {
+        "uuid": "16c6cb79_47d0296a",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporterConfig.java",
+        "patchSetId": 21
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-17T12:47:39Z",
+      "side": 1,
+      "message": "mmm ... String.nullToEmpty() is very verbose and not readable either. What about replacing the \"\" with a EMPTY_STRING constant? So that is clear that the default is empty. WDYT?",
+      "parentUuid": "f4835425_2ecb80cf",
+      "range": {
+        "startLine": 51,
+        "startChar": 16,
+        "endLine": 51,
+        "endChar": 52
+      },
+      "revId": "70768a3ae3cf06cd37b4fcea02e00440876d119f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8aceed77_3a72ae44",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporterConfig.java",
         "patchSetId": 21
@@ -135,6 +207,30 @@
       "writtenOn": "2020-07-17T08:07:13Z",
       "side": 1,
       "message": "nit: for more readability Strings.nullToEmpty(pluginConfig.getString(KEY_INITIAL_DELAY))",
+      "range": {
+        "startLine": 56,
+        "startChar": 16,
+        "endLine": 56,
+        "endChar": 61
+      },
+      "revId": "70768a3ae3cf06cd37b4fcea02e00440876d119f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "53c1e72f_63411f75",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporterConfig.java",
+        "patchSetId": 21
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-17T12:47:39Z",
+      "side": 1,
+      "message": "Same as before.",
+      "parentUuid": "8aceed77_3a72ae44",
       "range": {
         "startLine": 56,
         "startChar": 16,
