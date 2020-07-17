@@ -16,6 +16,23 @@
       "revId": "3df2ad82229979cfcafc94980b654b1af6d42ea5",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "230e1702_41f42fc2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 27
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-17T16:47:32Z",
+      "side": 1,
+      "message": "Upgrading @Marcin +1, taking into consideration the +2 from Tony.",
+      "revId": "3df2ad82229979cfcafc94980b654b1af6d42ea5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
