@@ -150,6 +150,30 @@
     },
     {
       "key": {
+        "uuid": "e8d73755_9630c4d6",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
+        "patchSetId": 21
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-17T16:20:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "17df107b_84834c88",
+      "range": {
+        "startLine": 41,
+        "startChar": 4,
+        "endLine": 41,
+        "endChar": 96
+      },
+      "revId": "70768a3ae3cf06cd37b4fcea02e00440876d119f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee67595f_24afba86",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
         "patchSetId": 21
@@ -265,6 +289,30 @@
       "revId": "70768a3ae3cf06cd37b4fcea02e00440876d119f",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "66511f69_c08488cf",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporterConfig.java",
+        "patchSetId": 21
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-17T16:20:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7d31c105_efd8a6da",
+      "range": {
+        "startLine": 51,
+        "startChar": 16,
+        "endLine": 51,
+        "endChar": 52
+      },
+      "revId": "70768a3ae3cf06cd37b4fcea02e00440876d119f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     },
     {
       "key": {
