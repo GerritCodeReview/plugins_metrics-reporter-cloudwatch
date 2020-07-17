@@ -1,11 +1,13 @@
 {
   "checks": {
     "zuul-check:plugins_metrics-reporter-cloudwatch": {
-      "state": "SCHEDULED",
-      "message": "Change has been enqueued in check",
+      "state": "FAILED",
+      "message": "Change failed",
+      "url": "https://ci.gerritcodereview.com/t/gerrit/buildset/a4736e3810704a37b4c3ea7436f59d21",
       "started": "2020-07-17T08:28:21Z",
+      "finished": "2020-07-17T08:28:22Z",
       "created": "2020-07-17T08:28:22Z",
-      "updated": "2020-07-17T08:28:22Z"
+      "updated": "2020-07-17T08:28:23Z"
     }
   }
 }
