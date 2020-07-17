@@ -126,6 +126,30 @@
     },
     {
       "key": {
+        "uuid": "17df107b_84834c88",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
+        "patchSetId": 21
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-17T15:40:44Z",
+      "side": 1,
+      "message": "\u003e I agree but with this injection we can test  GerritCloudwatchReporter with unit tests and we don\u0027t need extra code for testing and if you check follow up changes we are adding more and more variables just for testing. \n\nTrue, let me remove them because actually some of them aren\u0027t needed after all.\n\n\u003e But I don\u0027want to block this CR because it\u0027s needed. I can prepare change on top of this chain to remove all that unnecessary code.\n\nI can do some cleanup now anyway.",
+      "parentUuid": "efa19b81_3296d9d9",
+      "range": {
+        "startLine": 41,
+        "startChar": 4,
+        "endLine": 41,
+        "endChar": 96
+      },
+      "revId": "70768a3ae3cf06cd37b4fcea02e00440876d119f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ee67595f_24afba86",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
         "patchSetId": 21
