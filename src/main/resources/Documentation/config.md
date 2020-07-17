@@ -52,6 +52,21 @@ execution.
     * Default: "0"
     * Example: 60 seconds
 
+* `plugin.@PLUGIN@.jvmMetrics` (Optional): Add JVM metrics to the registry
+
+   * Type: Boolean
+   * Default: false
+   * Example: true
+
+  Supported metrics include:
+
+  _jvm.uptime.*_, _jvm.current_time.*_, _jvm.classes.*_, _jvm.fd_usage.*_, _jvm.buffers.*_,
+  _jvm.gc.*_, _jvm.memory.*_, _jvm.thread-states.*_
+
+  Refer to the [codahale-aggregated-metrics-cloudwatch-reporter](https://github.com/azagniotov/codahale-aggregated-metrics-cloudwatch-reporter/)
+documentation for more information on this.
+
+
 * `plugin.@PLUGIN@.excludeMetrics` (Optional): Regex pattern used to exclude
 metrics from the report. It can be specified multiple times.
 Note that pattern matching is done on the whole metric name, not only on a part of it.

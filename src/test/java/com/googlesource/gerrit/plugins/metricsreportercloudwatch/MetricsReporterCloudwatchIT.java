@@ -46,6 +46,7 @@ import org.junit.Test;
 public class MetricsReporterCloudwatchIT extends LightweightPluginDaemonTest {
   private static final String TEST_METRIC_NAME = "test/metric/name";
   private static final long TEST_METRIC_INCREMENT = 1234567L;
+  private static final String TEST_JVM_METRIC_NAME = "jvm.uptime";
   private static final String TEST_TIMEOUT = "10";
   private static final Duration TEST_TIMEOUT_DURATION =
       Duration.ofSeconds(Integer.valueOf(TEST_TIMEOUT));
@@ -103,6 +104,36 @@ public class MetricsReporterCloudwatchIT extends LightweightPluginDaemonTest {
                   dryRunMetricsOutput
                       .metricsStream()
                       .anyMatch(l -> l.contains("MetricName=" + TEST_METRIC_NAME)));
+        });
+  }
+
+  @GerritConfig(name = "plugin.metrics-reporter-cloudwatch.dryrun", value = "true")
+  @GerritConfig(name = "plugin.metrics-reporter-cloudwatch.jvmMetrics", value = "true")
+  @GerritConfig(name = "plugin.metrics-reporter-cloudwatch.rate", value = TEST_TIMEOUT)
+  public void shouldReportJVMMetricsToCloudwatch() throws Exception {
+    InMemoryLoggerAppender dryRunMetricsOutput = newInMemoryLogger();
+
+    waitUntil(
+        () ->
+            dryRunMetricsOutput
+                .metricsStream()
+                .anyMatch(l -> l.contains("MetricName=" + TEST_JVM_METRIC_NAME)));
+  }
+
+  @Test
+  @GerritConfig(name = "plugin.metrics-reporter-cloudwatch.dryrun", value = "true")
+  @GerritConfig(name = "plugin.metrics-reporter-cloudwatch.rate", value = TEST_TIMEOUT)
+  public void shouldNotReportJVMMetricsToCloudwatchByDefault() throws Exception {
+    InMemoryLoggerAppender dryRunMetricsOutput = newInMemoryLogger();
+
+    assertThrows(
+        InterruptedException.class,
+        () -> {
+          waitUntil(
+              () ->
+                  dryRunMetricsOutput
+                      .metricsStream()
+                      .anyMatch(l -> l.contains("MetricName=" + TEST_JVM_METRIC_NAME)));
         });
   }
 
