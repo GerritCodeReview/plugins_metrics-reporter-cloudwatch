@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "4d939e1c_fcd328c7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 21
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2020-07-17T12:09:28Z",
+      "side": 1,
+      "message": "See my previous comment. Instead of creating CloudWatchAsyncClientBuilder in GerritCloudwatchReporter we could inject it. So in tests we can mock it and avoid those boolean variables represents state and used just for test. In the module we can have something like bind(CloudWatchAsyncClientBuilder.class).toInstance(CloudWatchAsyncClient.builder()",
+      "parentUuid": "2ade2628_f94f1606",
+      "revId": "70768a3ae3cf06cd37b4fcea02e00440876d119f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "105a04c3_08ba017e",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
         "patchSetId": 21
