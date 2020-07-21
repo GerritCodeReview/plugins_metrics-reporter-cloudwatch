@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e3307d47_c1585d4c",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporterConfig.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-21T13:13:19Z",
+      "side": 1,
+      "message": "This is only called once, it\u0027s not an issue.\nBut I see your point, let me address this",
+      "parentUuid": "dc11125f_9788a0a6",
+      "range": {
+        "startLine": 93,
+        "startChar": 0,
+        "endLine": 94,
+        "endChar": 83
+      },
+      "revId": "6f2384c468e109a0db7dc64143fd41c990a4432a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "45d22767_0f208df3",
         "filename": "src/test/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporterConfigTest.java",
         "patchSetId": 11
