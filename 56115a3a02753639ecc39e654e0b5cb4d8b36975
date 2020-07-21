@@ -16,6 +16,24 @@
       "revId": "56115a3a02753639ecc39e654e0b5cb4d8b36975",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d6e0505a_7d2e8e59",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2020-07-21T14:21:02Z",
+      "side": 1,
+      "message": "Sure I will finish optional network stack creating and I will work on that one",
+      "parentUuid": "312d66b6_cf5e443a",
+      "revId": "56115a3a02753639ecc39e654e0b5cb4d8b36975",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
