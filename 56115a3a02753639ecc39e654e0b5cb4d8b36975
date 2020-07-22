@@ -52,6 +52,24 @@
       "revId": "56115a3a02753639ecc39e654e0b5cb4d8b36975",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2633d2a3_4a83ef0f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2020-07-22T08:35:16Z",
+      "side": 1,
+      "message": "Yes I just had a look, compilation issue is resolved for stable-3.2 and master. Are you planning to add unit tests?",
+      "parentUuid": "e49bcfe9_d81a336d",
+      "revId": "56115a3a02753639ecc39e654e0b5cb4d8b36975",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
