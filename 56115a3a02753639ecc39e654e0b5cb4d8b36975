@@ -34,6 +34,24 @@
       "revId": "56115a3a02753639ecc39e654e0b5cb4d8b36975",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e49bcfe9_d81a336d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-22T08:28:50Z",
+      "side": 1,
+      "message": "@marcin, @luca see my last patchset, I have already fixed the compilation issue.",
+      "parentUuid": "d6e0505a_7d2e8e59",
+      "revId": "56115a3a02753639ecc39e654e0b5cb4d8b36975",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
