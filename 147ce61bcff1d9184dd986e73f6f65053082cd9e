@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ec909d54_91a95edf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-23T21:33:44Z",
+      "side": 1,
+      "message": "Needs GJF. Unfortunately, the Zuul CI doesn\u0027t run the formatting check.",
+      "revId": "147ce61bcff1d9184dd986e73f6f65053082cd9e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
