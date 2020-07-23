@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1596ef82_1f213962",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-23T21:48:00Z",
+      "side": 1,
+      "message": "The code is good, but the integration test is always green, regardless of the configuration of the exclusion.",
+      "revId": "b75d6711580f10c44457e1f1f4dc6db73f042ac9",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ebe8d7b8_c1da2344",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-23T21:48:00Z",
+      "side": 1,
+      "message": "nit: this extra remark looks redundant to me.",
+      "range": {
+        "startLine": 57,
+        "startChar": 59,
+        "endLine": 57,
+        "endChar": 85
+      },
+      "revId": "b75d6711580f10c44457e1f1f4dc6db73f042ac9",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "05444209_1f578e28",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-23T21:48:00Z",
+      "side": 1,
+      "message": "failed to load",
+      "range": {
+        "startLine": 61,
+        "startChar": 44,
+        "endLine": 61,
+        "endChar": 52
+      },
+      "revId": "b75d6711580f10c44457e1f1f4dc6db73f042ac9",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e166b381_c6132654",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/MetricsReporterCloudwatchIT.java",
+        "patchSetId": 16
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-23T21:48:00Z",
+      "side": 1,
+      "message": "This isn\u0027t a good way IMHO to assert the behaviour: as a matter of fact, if I disable the excludeMetrics config at L90-L92, the test is still green, which is a symptom that the test is incorrect.\n\nThe waitUntil() is typically done when we want to wait for something to show up, but here, we are asserting that the metrics should not show up, which is always true, regardless of the config. \n\nIn fact, when the system starts up, the metrics may not have yet populated and the first metricsStream() is empty. Hence, the test that is just asserting a non-event (noneMatch) would always be true.\n\nWhat about asserting that the waitUntil for TEST_METRIC_NAME to show up is failing for timeout?",
+      "range": {
+        "startLine": 101,
+        "startChar": 17,
+        "endLine": 101,
+        "endChar": 76
+      },
+      "revId": "b75d6711580f10c44457e1f1f4dc6db73f042ac9",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
