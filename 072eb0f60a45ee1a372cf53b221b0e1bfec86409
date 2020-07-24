@@ -1,11 +1,13 @@
 {
   "checks": {
     "zuul-check:plugins_metrics-reporter-cloudwatch": {
-      "state": "RUNNING",
-      "message": "Jobs have started running",
+      "state": "FAILED",
+      "message": "Change failed",
+      "url": "https://ci.gerritcodereview.com/t/gerrit/buildset/945bb12db5914e8d8a45d6de5600e456",
       "started": "2020-07-24T11:05:31Z",
+      "finished": "2020-07-24T11:15:07Z",
       "created": "2020-07-24T11:05:31Z",
-      "updated": "2020-07-24T11:05:33Z"
+      "updated": "2020-07-24T11:15:07Z"
     }
   }
 }
