@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9919e110_525e0f24",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-24T23:30:58Z",
+      "side": 1,
+      "message": "@Tony can you check again why this is failing on Zuul but not for you locally? (you added Verified +1)",
+      "revId": "072eb0f60a45ee1a372cf53b221b0e1bfec86409",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
