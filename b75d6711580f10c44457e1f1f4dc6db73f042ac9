@@ -113,6 +113,30 @@
     },
     {
       "key": {
+        "uuid": "a62e2c33_e6eb7627",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-07-25T21:43:21Z",
+      "side": 1,
+      "message": "Forgot to make the amendment?",
+      "parentUuid": "1cd4ec86_4d37dfad",
+      "range": {
+        "startLine": 61,
+        "startChar": 44,
+        "endLine": 61,
+        "endChar": 52
+      },
+      "revId": "b75d6711580f10c44457e1f1f4dc6db73f042ac9",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e166b381_c6132654",
         "filename": "src/test/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/MetricsReporterCloudwatchIT.java",
         "patchSetId": 16
