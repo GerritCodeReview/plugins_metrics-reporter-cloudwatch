@@ -27,8 +27,8 @@ import com.google.gerrit.metrics.Description;
 import com.google.gerrit.metrics.MetricMaker;
 import com.google.inject.Inject;
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.Enumeration;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 import org.apache.log4j.AppenderSkeleton;
@@ -110,7 +110,7 @@ public class MetricsReporterCloudwatchIT extends LightweightPluginDaemonTest {
   static class InMemoryLoggerAppender extends AppenderSkeleton {
     private final Splitter metricsDatumSplitter = Splitter.on("MetricDatum");
 
-    private ArrayList<String> logLines = new ArrayList<>();
+    private CopyOnWriteArrayList<String> logLines = new CopyOnWriteArrayList<>();
 
     @Override
     public void close() {}
