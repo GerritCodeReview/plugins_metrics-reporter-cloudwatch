@@ -16,6 +16,24 @@
       "revId": "9b8b196e420f2c4f3e0319f17e92beb0e759fa62",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1829910e_90f197a7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-07-28T08:44:20Z",
+      "side": 1,
+      "message": "This is the failure:\n\n\nSubmodule \u0027modules/jgit\u0027 (/home/zuul/src/gerrit.googlesource.com/jgit) registered for path \u0027modules/jgit\u0027\nCloning into \u0027/home/zuul/src/gerrit.googlesource.com/gerrit/modules/jgit\u0027...\ndone.\nFetched in submodule path \u0027modules/jgit\u0027, but it did not contain 14c43828d471b811e3245631251a3ce77cc4214a. Direct fetching of that commit failed.\n\nIt seems like the jgit module is pinned to a nonexisting sha1?\nI am not sure how to go about this, any ideas?",
+      "parentUuid": "53f24aaa_9a35faeb",
+      "revId": "9b8b196e420f2c4f3e0319f17e92beb0e759fa62",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
