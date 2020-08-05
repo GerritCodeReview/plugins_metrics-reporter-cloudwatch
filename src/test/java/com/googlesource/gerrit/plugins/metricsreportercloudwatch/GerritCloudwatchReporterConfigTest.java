@@ -22,6 +22,7 @@ import com.codahale.metrics.MetricFilter;
 import com.google.gerrit.server.config.PluginConfig;
 import com.google.gerrit.server.config.PluginConfigFactory;
 import java.util.Arrays;
+import java.util.Optional;
 import java.util.regex.PatternSyntaxException;
 import org.eclipse.jgit.lib.Config;
 import org.junit.Test;
@@ -31,6 +32,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
 public class GerritCloudwatchReporterConfigTest {
+  private static final String gerritInstanceId = "testInstanceId";
   private static final String PLUGIN_NAME = "foo";
   private final PluginConfig emptyGlobalPluginConfig = new PluginConfig(PLUGIN_NAME, new Config());
 
@@ -41,7 +43,7 @@ public class GerritCloudwatchReporterConfigTest {
   @Test
   public void shouldGetAllDefaultsWhenConfigurationIsEmpty() {
     when(configFactory.getFromGerritConfig(PLUGIN_NAME)).thenReturn(emptyGlobalPluginConfig);
-    reporterConfig = new GerritCloudwatchReporterConfig(configFactory, PLUGIN_NAME);
+    reporterConfig = new GerritCloudwatchReporterConfig(configFactory, PLUGIN_NAME, null);
 
     assertThat(reporterConfig.getInitialDelay())
         .isEqualTo(GerritCloudwatchReporterConfig.DEFAULT_INITIAL_DELAY_SECS);
@@ -53,6 +55,7 @@ public class GerritCloudwatchReporterConfigTest {
         .isEqualTo(GerritCloudwatchReporterConfig.DEFAULT_DRY_RUN);
     assertThat(reporterConfig.getJvmMetrics())
         .isEqualTo(GerritCloudwatchReporterConfig.DEFAULT_JVM_METRICS);
+    assertThat(reporterConfig.getMaybeInstanceId()).isEqualTo(Optional.empty());
   }
 
   @Test
@@ -65,13 +68,15 @@ public class GerritCloudwatchReporterConfigTest {
     globalPluginConfig.setBoolean(GerritCloudwatchReporterConfig.KEY_JVM_METRICS, true);
 
     when(configFactory.getFromGerritConfig(PLUGIN_NAME)).thenReturn(globalPluginConfig);
-    reporterConfig = new GerritCloudwatchReporterConfig(configFactory, PLUGIN_NAME);
+    reporterConfig =
+        new GerritCloudwatchReporterConfig(configFactory, PLUGIN_NAME, gerritInstanceId);
 
     assertThat(reporterConfig.getInitialDelay()).isEqualTo(20);
     assertThat(reporterConfig.getNamespace()).isEqualTo("foobar");
     assertThat(reporterConfig.getRate()).isEqualTo(180);
     assertThat(reporterConfig.getDryRun()).isTrue();
     assertThat(reporterConfig.getJvmMetrics()).isTrue();
+    assertThat(reporterConfig.getMaybeInstanceId().get()).isEqualTo(gerritInstanceId);
   }
 
   @Test
@@ -81,7 +86,8 @@ public class GerritCloudwatchReporterConfigTest {
         GerritCloudwatchReporterConfig.KEY_EXCLUDE_METRICS, Arrays.asList("foo.*", ".*bar"));
 
     when(configFactory.getFromGerritConfig(PLUGIN_NAME)).thenReturn(globalPluginConfig);
-    reporterConfig = new GerritCloudwatchReporterConfig(configFactory, PLUGIN_NAME);
+    reporterConfig =
+        new GerritCloudwatchReporterConfig(configFactory, PLUGIN_NAME, gerritInstanceId);
 
     MetricFilter exclusionFilter = reporterConfig.getExclusionFilter();
     assertThat(exclusionFilter.matches("foo/metrics/for/testing", new Counter())).isFalse();
@@ -101,7 +107,7 @@ public class GerritCloudwatchReporterConfigTest {
     assertThrows(
         PatternSyntaxException.class,
         () -> {
-          new GerritCloudwatchReporterConfig(configFactory, PLUGIN_NAME);
+          new GerritCloudwatchReporterConfig(configFactory, PLUGIN_NAME, gerritInstanceId);
         });
   }
 }

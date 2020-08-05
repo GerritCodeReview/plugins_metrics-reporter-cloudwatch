@@ -45,6 +45,11 @@ public class GerritCloudwatchReporter implements LifecycleListener {
             .withReportRawCountValue()
             .withHighResolution();
 
+    if (config.getMaybeInstanceId().isPresent()) {
+      cloudWatchReporterBuilder.withGlobalDimensions(
+          String.format("InstanceId=%s", config.getMaybeInstanceId().get()));
+    }
+
     if (config.getDryRun()) {
       cloudWatchReporterBuilder = cloudWatchReporterBuilder.withDryRun();
     }
