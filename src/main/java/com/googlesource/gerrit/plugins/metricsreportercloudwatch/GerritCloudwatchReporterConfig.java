@@ -16,13 +16,16 @@ package com.googlesource.gerrit.plugins.metricsreportercloudwatch;
 import static java.util.stream.Collectors.toList;
 
 import com.codahale.metrics.MetricFilter;
+import com.google.gerrit.common.Nullable;
 import com.google.gerrit.extensions.annotations.PluginName;
 import com.google.gerrit.server.config.ConfigUtil;
+import com.google.gerrit.server.config.GerritInstanceId;
 import com.google.gerrit.server.config.PluginConfig;
 import com.google.gerrit.server.config.PluginConfigFactory;
 import com.google.inject.Inject;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Predicate;
 import java.util.regex.Pattern;
@@ -48,11 +51,16 @@ class GerritCloudwatchReporterConfig {
   private final Boolean dryRun;
   private final MetricFilter exclusionFilter;
   private final Boolean jvmMetrics;
+  private final Optional<String> maybeInstanceId;
 
   @Inject
   public GerritCloudwatchReporterConfig(
-      PluginConfigFactory configFactory, @PluginName String pluginName) {
+      PluginConfigFactory configFactory,
+      @PluginName String pluginName,
+      @Nullable @GerritInstanceId String instanceId) {
     PluginConfig pluginConfig = configFactory.getFromGerritConfig(pluginName);
+
+    this.maybeInstanceId = Optional.ofNullable(instanceId);
 
     this.namespace = pluginConfig.getString(KEY_NAMESPACE, DEFAULT_NAMESPACE);
 
@@ -108,5 +116,9 @@ class GerritCloudwatchReporterConfig {
     Predicate<String> filter =
         s -> excludedMetricPatterns.stream().anyMatch(e -> e.matcher(s).matches());
     return (s, metric) -> !filter.test(s);
+  }
+
+  public Optional<String> getMaybeInstanceId() {
+    return maybeInstanceId;
   }
 }
