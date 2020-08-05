@@ -33,7 +33,8 @@ public class GerritCloudwatchReporter implements LifecycleListener {
       throws IllegalStateException {
     this.config = config;
 
-    final CloudWatchAsyncClientBuilder cloudWatchAsyncClientBuilder = CloudWatchAsyncClient.builder();
+    final CloudWatchAsyncClientBuilder cloudWatchAsyncClientBuilder =
+        CloudWatchAsyncClient.builder();
 
     CloudWatchReporter.Builder cloudWatchReporterBuilder =
         CloudWatchReporter.forRegistry(
@@ -44,6 +45,13 @@ public class GerritCloudwatchReporter implements LifecycleListener {
             .withZeroValuesSubmission()
             .withReportRawCountValue()
             .withHighResolution();
+
+    config
+        .getMaybeInstanceId()
+        .ifPresent(
+            instanceId ->
+                cloudWatchReporterBuilder.withGlobalDimensions(
+                    String.format("InstanceId=%s", config.getMaybeInstanceId().get())));
 
     if (config.getDryRun()) {
       cloudWatchReporterBuilder.withDryRun();
