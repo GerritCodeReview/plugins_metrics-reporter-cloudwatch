@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "978ff777_0b814958",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-08-06T09:43:50Z",
+      "side": 1,
+      "message": "Because local variables referenced from lambdas need to be final.\nA compile error would be raise:\n\nGerritCloudwatchReporter.java:50: error: local variables referenced from a lambda expression must be final or effectively final\n\nHowever, that variable _can_ be made final and the reassignment of the builder can be corrected: I have fixed this as a separate change and rebased this one on top of it, so that now we can use ifPresent instead.",
+      "parentUuid": "3e6f90af_3f0b946b",
+      "range": {
+        "startLine": 48,
+        "startChar": 4,
+        "endLine": 48,
+        "endChar": 48
+      },
+      "revId": "c83d0f173cf2fa4809c41327ecc0380f838422c6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "dc522a63_27870e50",
         "filename": "src/main/resources/Documentation/config.md",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "b55ee142_b39699a2",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-08-06T09:43:50Z",
+      "side": 1,
+      "message": "\"within a group of Gerrit instances\" in the phrasing used in the official documentation, I\u0027d keep it consistent to that.\nhttps://gerrit-review.googlesource.com/Documentation/config-gerrit.html#gerrit.instanceId",
+      "parentUuid": "dc522a63_27870e50",
+      "range": {
+        "startLine": 23,
+        "startChar": 46,
+        "endLine": 23,
+        "endChar": 51
+      },
+      "revId": "c83d0f173cf2fa4809c41327ecc0380f838422c6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8bb07ce3_5717ba6d",
         "filename": "src/test/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporterConfigTest.java",
         "patchSetId": 1
@@ -59,6 +107,30 @@
       "writtenOn": "2020-08-06T08:12:16Z",
       "side": 1,
       "message": "isEmpty?",
+      "range": {
+        "startLine": 58,
+        "startChar": 52,
+        "endLine": 58,
+        "endChar": 79
+      },
+      "revId": "c83d0f173cf2fa4809c41327ecc0380f838422c6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "55b31747_0b437fc7",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporterConfigTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-08-06T09:43:50Z",
+      "side": 1,
+      "message": "isEmpty() is not available for assertions on Optional values, but only for lists, arrays, etc.\n\nWe could import and use assertj[1] if we really want to.\nWDYT?\n\n[1] https://assertj.github.io/doc/",
+      "parentUuid": "8bb07ce3_5717ba6d",
       "range": {
         "startLine": 58,
         "startChar": 52,
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "30bfcdb7_6877b82e",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporterConfigTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-08-06T09:43:50Z",
+      "side": 1,
+      "message": "Good point.",
+      "parentUuid": "ff5f232c_7c6507a5",
+      "range": {
+        "startLine": 79,
+        "startChar": 50,
+        "endLine": 79,
+        "endChar": 85
+      },
+      "revId": "c83d0f173cf2fa4809c41327ecc0380f838422c6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c77115e8_6732b908",
         "filename": "src/test/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/MetricsReporterCloudwatchIT.java",
         "patchSetId": 1
@@ -105,6 +201,30 @@
       "writtenOn": "2020-08-06T08:12:16Z",
       "side": 1,
       "message": "Why are we asserting that it should fail? I would have assumed the opposite as the test name says.",
+      "range": {
+        "startLine": 148,
+        "startChar": 0,
+        "endLine": 149,
+        "endChar": 35
+      },
+      "revId": "c83d0f173cf2fa4809c41327ecc0380f838422c6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e29c221f_8eb176aa",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/MetricsReporterCloudwatchIT.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-08-06T09:43:50Z",
+      "side": 1,
+      "message": "gah, I somehow pushed the wrong test (which unluckily happened to pass).\nthanks for spotting luca! 🙏",
+      "parentUuid": "c77115e8_6732b908",
       "range": {
         "startLine": 148,
         "startChar": 0,
