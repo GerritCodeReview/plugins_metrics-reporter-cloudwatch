@@ -46,6 +46,30 @@
       "revId": "bba13fbf199435b38f1771f771c12f5ebacdd3c6",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1d49ee73_bcde47e0",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-08-06T13:18:54Z",
+      "side": 1,
+      "message": "Oh yes, you\u0027re right.",
+      "parentUuid": "e459708c_74eee345",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 40
+      },
+      "revId": "bba13fbf199435b38f1771f771c12f5ebacdd3c6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
