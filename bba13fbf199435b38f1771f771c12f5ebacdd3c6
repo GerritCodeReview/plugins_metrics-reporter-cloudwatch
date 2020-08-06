@@ -22,6 +22,30 @@
       "revId": "bba13fbf199435b38f1771f771c12f5ebacdd3c6",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e459708c_74eee345",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-08-06T13:17:59Z",
+      "side": 1,
+      "message": "this formatting *is* related to the change.\nthe addition of the word \u0027final\u0027 made google-java-format decide to wrap the line.",
+      "parentUuid": "d985f6c7_b9994eda",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 40
+      },
+      "revId": "bba13fbf199435b38f1771f771c12f5ebacdd3c6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
