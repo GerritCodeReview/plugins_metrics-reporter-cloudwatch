@@ -1,11 +1,11 @@
 {
   "checks": {
     "zuul-check:plugins_metrics-reporter-cloudwatch": {
-      "state": "SCHEDULED",
-      "message": "Change has been enqueued in check",
+      "state": "RUNNING",
+      "message": "Jobs have started running",
       "started": "2020-08-06T09:58:23Z",
       "created": "2020-08-06T09:47:24Z",
-      "updated": "2020-08-06T09:58:24Z"
+      "updated": "2020-08-06T09:58:25Z"
     }
   }
 }
