@@ -32,7 +32,8 @@ import org.mockito.junit.MockitoJUnitRunner;
 @RunWith(MockitoJUnitRunner.class)
 public class GerritCloudwatchReporterConfigTest {
   private static final String PLUGIN_NAME = "foo";
-  private final PluginConfig emptyGlobalPluginConfig = new PluginConfig(PLUGIN_NAME, new Config());
+  private final PluginConfig.Update emptyGlobalPluginConfig =
+      PluginConfig.Update.forTest(PLUGIN_NAME, new Config());
 
   GerritCloudwatchReporterConfig reporterConfig;
 
@@ -40,7 +41,8 @@ public class GerritCloudwatchReporterConfigTest {
 
   @Test
   public void shouldGetAllDefaultsWhenConfigurationIsEmpty() {
-    when(configFactory.getFromGerritConfig(PLUGIN_NAME)).thenReturn(emptyGlobalPluginConfig);
+    when(configFactory.getFromGerritConfig(PLUGIN_NAME))
+        .thenReturn(emptyGlobalPluginConfig.asPluginConfig());
     reporterConfig = new GerritCloudwatchReporterConfig(configFactory, PLUGIN_NAME);
 
     assertThat(reporterConfig.getInitialDelay())
@@ -57,14 +59,15 @@ public class GerritCloudwatchReporterConfigTest {
 
   @Test
   public void shouldReadMetricValuesFromConfiguration() {
-    PluginConfig globalPluginConfig = emptyGlobalPluginConfig;
+    PluginConfig.Update globalPluginConfig = emptyGlobalPluginConfig;
     globalPluginConfig.setString(GerritCloudwatchReporterConfig.KEY_NAMESPACE, "foobar");
     globalPluginConfig.setString(GerritCloudwatchReporterConfig.KEY_RATE, "3m");
     globalPluginConfig.setString(GerritCloudwatchReporterConfig.KEY_INITIAL_DELAY, "20s");
     globalPluginConfig.setBoolean(GerritCloudwatchReporterConfig.KEY_DRYRUN, true);
     globalPluginConfig.setBoolean(GerritCloudwatchReporterConfig.KEY_JVM_METRICS, true);
 
-    when(configFactory.getFromGerritConfig(PLUGIN_NAME)).thenReturn(globalPluginConfig);
+    when(configFactory.getFromGerritConfig(PLUGIN_NAME))
+        .thenReturn(globalPluginConfig.asPluginConfig());
     reporterConfig = new GerritCloudwatchReporterConfig(configFactory, PLUGIN_NAME);
 
     assertThat(reporterConfig.getInitialDelay()).isEqualTo(20);
@@ -76,11 +79,12 @@ public class GerritCloudwatchReporterConfigTest {
 
   @Test
   public void shouldReadCorrectExclusionFilter() {
-    PluginConfig globalPluginConfig = emptyGlobalPluginConfig;
+    PluginConfig.Update globalPluginConfig = emptyGlobalPluginConfig;
     globalPluginConfig.setStringList(
         GerritCloudwatchReporterConfig.KEY_EXCLUDE_METRICS, Arrays.asList("foo.*", ".*bar"));
 
-    when(configFactory.getFromGerritConfig(PLUGIN_NAME)).thenReturn(globalPluginConfig);
+    when(configFactory.getFromGerritConfig(PLUGIN_NAME))
+        .thenReturn(globalPluginConfig.asPluginConfig());
     reporterConfig = new GerritCloudwatchReporterConfig(configFactory, PLUGIN_NAME);
 
     MetricFilter exclusionFilter = reporterConfig.getExclusionFilter();
@@ -92,11 +96,12 @@ public class GerritCloudwatchReporterConfigTest {
   @Test
   public void shouldThrowAnExceptionWhenExcludeMetricsRegexIsNotValid() {
     final String INVALID_REGEXP = "[[?";
-    PluginConfig globalPluginConfig = emptyGlobalPluginConfig;
+    PluginConfig.Update globalPluginConfig = emptyGlobalPluginConfig;
     globalPluginConfig.setString(
         GerritCloudwatchReporterConfig.KEY_EXCLUDE_METRICS, INVALID_REGEXP);
 
-    when(configFactory.getFromGerritConfig(PLUGIN_NAME)).thenReturn(globalPluginConfig);
+    when(configFactory.getFromGerritConfig(PLUGIN_NAME))
+        .thenReturn(globalPluginConfig.asPluginConfig());
 
     assertThrows(
         PatternSyntaxException.class,
