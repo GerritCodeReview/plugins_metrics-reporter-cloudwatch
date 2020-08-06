@@ -120,6 +120,30 @@
     },
     {
       "key": {
+        "uuid": "1fb2f149_f53e351a",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-08-06T13:22:03Z",
+      "side": 1,
+      "message": "Ack.",
+      "parentUuid": "b55ee142_b39699a2",
+      "range": {
+        "startLine": 23,
+        "startChar": 46,
+        "endLine": 23,
+        "endChar": 51
+      },
+      "revId": "c83d0f173cf2fa4809c41327ecc0380f838422c6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8bb07ce3_5717ba6d",
         "filename": "src/test/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporterConfigTest.java",
         "patchSetId": 1
@@ -164,6 +188,30 @@
       "revId": "c83d0f173cf2fa4809c41327ecc0380f838422c6",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6b4c6d59_a7c284f7",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporterConfigTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-08-06T13:22:03Z",
+      "side": 1,
+      "message": "Gotcha, let\u0027s keep .isEqualTo(Optional.empty()) then",
+      "parentUuid": "55b31747_0b437fc7",
+      "range": {
+        "startLine": 58,
+        "startChar": 52,
+        "endLine": 58,
+        "endChar": 79
+      },
+      "revId": "c83d0f173cf2fa4809c41327ecc0380f838422c6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     },
     {
       "key": {
