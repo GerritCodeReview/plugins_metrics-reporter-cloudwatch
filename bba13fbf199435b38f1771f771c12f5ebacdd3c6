@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d985f6c7_b9994eda",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-08-06T13:11:05Z",
+      "side": 1,
+      "message": "Unrelated formatting change. It would be best to:\n1. Do a formatting-only change\n2. Rebase this on top of 1.\n\nP.S. The Zuul CI validation doesn\u0027t check the code-style: shall we revert to the Jenkins one for now?",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 40
+      },
+      "revId": "bba13fbf199435b38f1771f771c12f5ebacdd3c6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
