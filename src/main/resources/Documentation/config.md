@@ -16,6 +16,19 @@ Find the all the details about the default provider chain
 [here](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html) and
 [here](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html)
 
+## InstanceId Dimension
+
+Gerrit can be optionally configured to have a unique identifier, the
+[instanceId](https://gerrit-review.googlesource.com/Documentation/config-gerrit.html#gerrit.instanceId),
+which represents a specific instance within a group of Gerrit instances.
+
+When the instanceId is set this plugin will hydrate all the metrics sent to CloudWatch with
+an additional dimension named `InstanceId`, populated with the value of the `gerrit.instanceId`
+configuration.
+
+This is useful as it allows to correlate cloudwatch metrics to specific instances
+they originated from.
+
 ## Metrics Reporter
 
 * `plugin.@PLUGIN@.dryRun` (Optional): the reporter will log.DEBUG the metrics,
