@@ -88,3 +88,10 @@ Note that pattern matching is done on the whole metric name, not only on a part 
 
 In case of invalid pattern, the plugin will fail to load and the relevant error will
 be logged in the _error_log_ file.
+
+* `plugin.@PLUGIN@.reportRawCountValue` (Optional): Will report the raw value of count
+metrics instead of reporting only the count difference since the last report.
+
+   * Type: Boolean
+   * Default: false
+   * Example: true
