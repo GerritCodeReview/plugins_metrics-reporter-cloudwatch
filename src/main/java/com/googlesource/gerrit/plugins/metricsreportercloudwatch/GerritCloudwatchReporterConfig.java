@@ -37,6 +37,7 @@ class GerritCloudwatchReporterConfig {
   protected static final String KEY_INITIAL_DELAY = "initialDelay";
   protected static final String KEY_EXCLUDE_METRICS = "excludeMetrics";
   protected static final String KEY_JVM_METRICS = "jvmMetrics";
+  protected static final String KEY_REPORT_RAW_COUNT_VALUE = "reportRawCountValue";
 
   protected static final String DEFAULT_NAMESPACE = "gerrit";
   protected static final String DEFAULT_EMPTY_STRING = "";
@@ -44,6 +45,7 @@ class GerritCloudwatchReporterConfig {
   protected static final Boolean DEFAULT_JVM_METRICS = false;
   protected static final Long DEFAULT_RATE_SECS = 60L;
   protected static final Integer DEFAULT_INITIAL_DELAY_SECS = 0;
+  protected static final Boolean DEFAULT_REPORT_RAW_COUNT_VALUE = false;
 
   private final int rate;
   private final String namespace;
@@ -51,6 +53,7 @@ class GerritCloudwatchReporterConfig {
   private final Boolean dryRun;
   private final MetricFilter exclusionFilter;
   private final Boolean jvmMetrics;
+  private final Boolean reportRawCountValue;
   private final Optional<String> maybeInstanceId;
 
   @Inject
@@ -83,6 +86,8 @@ class GerritCloudwatchReporterConfig {
                 TimeUnit.SECONDS);
 
     this.exclusionFilter = buildExclusionFilter(pluginConfig.getStringList(KEY_EXCLUDE_METRICS));
+    this.reportRawCountValue =
+        pluginConfig.getBoolean(KEY_REPORT_RAW_COUNT_VALUE, DEFAULT_REPORT_RAW_COUNT_VALUE);
   }
 
   public int getRate() {
@@ -120,5 +125,9 @@ class GerritCloudwatchReporterConfig {
 
   public Optional<String> getMaybeInstanceId() {
     return maybeInstanceId;
+  }
+
+  public boolean getReportRawCountValue() {
+    return reportRawCountValue;
   }
 }
