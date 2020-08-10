@@ -74,6 +74,57 @@ public class MetricsReporterCloudwatchIT extends LightweightPluginDaemonTest {
 
   @Test
   @GerritConfig(name = "plugin.metrics-reporter-cloudwatch.dryrun", value = "true")
+  @GerritConfig(name = "plugin.metrics-reporter-cloudwatch.rate", value = "2")
+  public void shouldReportMetricValueAsDeltaToCloudwatch() throws Exception {
+    InMemoryLoggerAppender dryRunMetricsOutput = newInMemoryLogger();
+
+    testCounterMetric.incrementBy(5);
+
+    waitUntil(
+        () ->
+            dryRunMetricsOutput
+                .metricsStream()
+                .filter(l -> l.contains("MetricName=" + TEST_METRIC_NAME))
+                .anyMatch(l -> l.contains("Value=5.0")));
+
+    testCounterMetric.incrementBy(3);
+
+    waitUntil(
+        () ->
+            dryRunMetricsOutput
+                .metricsStream()
+                .filter(l -> l.contains("MetricName=" + TEST_METRIC_NAME))
+                .anyMatch(l -> l.contains("Value=3.0")));
+  }
+
+  @Test
+  @GerritConfig(name = "plugin.metrics-reporter-cloudwatch.dryrun", value = "true")
+  @GerritConfig(name = "plugin.metrics-reporter-cloudwatch.rate", value = "2")
+  @GerritConfig(name = "plugin.metrics-reporter-cloudwatch.reportRawCountValue", value = "true")
+  public void shouldReportMetricValueAsRawToCloudwatch() throws Exception {
+    InMemoryLoggerAppender dryRunMetricsOutput = newInMemoryLogger();
+
+    testCounterMetric.incrementBy(5);
+
+    waitUntil(
+        () ->
+            dryRunMetricsOutput
+                .metricsStream()
+                .filter(l -> l.contains("MetricName=" + TEST_METRIC_NAME))
+                .anyMatch(l -> l.contains("Value=5.0")));
+
+    testCounterMetric.incrementBy(3);
+
+    waitUntil(
+        () ->
+            dryRunMetricsOutput
+                .metricsStream()
+                .filter(l -> l.contains("MetricName=" + TEST_METRIC_NAME))
+                .anyMatch(l -> l.contains("Value=8.0")));
+  }
+
+  @Test
+  @GerritConfig(name = "plugin.metrics-reporter-cloudwatch.dryrun", value = "true")
   @GerritConfig(name = "plugin.metrics-reporter-cloudwatch.rate", value = TEST_TIMEOUT)
   public void shouldReportMetricValueToCloudwatch() throws Exception {
     InMemoryLoggerAppender dryRunMetricsOutput = newInMemoryLogger();

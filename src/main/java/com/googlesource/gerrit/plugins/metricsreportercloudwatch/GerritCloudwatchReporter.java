@@ -43,7 +43,6 @@ public class GerritCloudwatchReporter implements LifecycleListener {
             .convertDurationsTo(TimeUnit.MILLISECONDS)
             .filter(config.getExclusionFilter())
             .withZeroValuesSubmission()
-            .withReportRawCountValue()
             .withHighResolution();
 
     config
@@ -59,6 +58,10 @@ public class GerritCloudwatchReporter implements LifecycleListener {
 
     if (config.getJvmMetrics()) {
       cloudWatchReporterBuilder.withJvmMetrics();
+    }
+
+    if (config.getReportRawCountValue()) {
+      cloudWatchReporterBuilder.withReportRawCountValue();
     }
 
     cloudWatchReporter = cloudWatchReporterBuilder.build();
