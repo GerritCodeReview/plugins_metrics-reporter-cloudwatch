@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2aff92b9_77ce083e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-08-11T07:52:01Z",
+      "side": 1,
+      "message": "If cloudwatch doesn\u0027t support delta functions at all, in which case would we need the \"rawCountValue\" set to true?\n\nIf it doesn\u0027t ever make sense to enable it, should we just remove the config altogether?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 57
+      },
+      "revId": "8da42ba7cf9f044045a6b7beba1e8d229698f86a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cee5c3dd_88eb0647",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-08-11T07:52:01Z",
+      "side": 1,
+      "message": "built",
+      "range": {
+        "startLine": 9,
+        "startChar": 34,
+        "endLine": 9,
+        "endChar": 39
+      },
+      "revId": "8da42ba7cf9f044045a6b7beba1e8d229698f86a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "56dce3e4_529b2d70",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/MetricsReporterCloudwatchIT.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-08-11T07:52:01Z",
+      "side": 1,
+      "message": "Why 2 here, rather than TEST_TIMEOUT?",
+      "range": {
+        "startLine": 77,
+        "startChar": 66,
+        "endLine": 77,
+        "endChar": 77
+      },
+      "revId": "8da42ba7cf9f044045a6b7beba1e8d229698f86a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
