@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "cf469f03_2d249bbf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-08-11T08:05:19Z",
+      "side": 1,
+      "message": "However, that may depend on the metric right? Some metrics may be useful to be kept as a counter raw value and other won\u0027t.\n\nLet keep it simple for now as a global switch: we can then tailor this to the specific metric if we need to.\n\nWDYT?",
+      "parentUuid": "d0a02f2c_17900142",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 57
+      },
+      "revId": "8da42ba7cf9f044045a6b7beba1e8d229698f86a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "56dce3e4_529b2d70",
         "filename": "src/test/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/MetricsReporterCloudwatchIT.java",
         "patchSetId": 3
