@@ -144,6 +144,30 @@
     },
     {
       "key": {
+        "uuid": "f2408279_a573dbc3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-08-11T08:31:07Z",
+      "side": 1,
+      "message": "\u003e However, that may depend on the metric right? Some metrics may be useful to be kept as a counter raw value and other won\u0027t.\n\n\u003e I suggest to do that in a separate change\n\nYeha, this would be ideal, but the codahale-aggregated-metrics-cloudwatch-reporter API does not support per-metric configuration of the rawValue, only globally, AFAICT.\n\nWe could look at patching that library though 😊\n\nI still don\u0027t see much value in ever wanting to plot cumulative counters (I should have not used that method in the first place, sorry about that), but if you are happy with this being configurable, that\u0027s fine by me.",
+      "parentUuid": "badb2c0c_f99d8aee",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 57
+      },
+      "revId": "8da42ba7cf9f044045a6b7beba1e8d229698f86a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "56dce3e4_529b2d70",
         "filename": "src/test/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/MetricsReporterCloudwatchIT.java",
         "patchSetId": 3
@@ -179,6 +203,30 @@
       "side": 1,
       "message": "Because we have to increment counter twice so it must be small enough to not cause test timeout",
       "parentUuid": "56dce3e4_529b2d70",
+      "range": {
+        "startLine": 77,
+        "startChar": 66,
+        "endLine": 77,
+        "endChar": 77
+      },
+      "revId": "8da42ba7cf9f044045a6b7beba1e8d229698f86a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "330fce00_ce598821",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/MetricsReporterCloudwatchIT.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2020-08-11T08:31:07Z",
+      "side": 1,
+      "message": "I ran the tests using the TEST_TIMEOUT instead and they all pass, even with parallelism. Were they failing for you?\n\nIf we do need this value, can we capture it in a variable rather than being a magic number?",
+      "parentUuid": "7f7e53a2_280c61e8",
       "range": {
         "startLine": 77,
         "startChar": 66,
