@@ -68,6 +68,30 @@
       "revId": "8da42ba7cf9f044045a6b7beba1e8d229698f86a",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f7e53a2_280c61e8",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/MetricsReporterCloudwatchIT.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2020-08-11T07:59:34Z",
+      "side": 1,
+      "message": "Because we have to increment counter twice so it must be small enough to not cause test timeout",
+      "parentUuid": "56dce3e4_529b2d70",
+      "range": {
+        "startLine": 77,
+        "startChar": 66,
+        "endLine": 77,
+        "endChar": 77
+      },
+      "revId": "8da42ba7cf9f044045a6b7beba1e8d229698f86a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
