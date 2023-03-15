@@ -57,7 +57,7 @@ public class GerritCloudwatchReporterConfigTest {
         .isEqualTo(GerritCloudwatchReporterConfig.DEFAULT_DRY_RUN);
     assertThat(reporterConfig.getJvmMetrics())
         .isEqualTo(GerritCloudwatchReporterConfig.DEFAULT_JVM_METRICS);
-    assertThat(reporterConfig.getMaybeInstanceId()).isEqualTo(Optional.empty());
+    assertThat(reporterConfig.getMaybeApplicationName()).isEqualTo(Optional.empty());
   }
 
   @Test
@@ -68,6 +68,7 @@ public class GerritCloudwatchReporterConfigTest {
     globalPluginConfig.setString(GerritCloudwatchReporterConfig.KEY_INITIAL_DELAY, "20s");
     globalPluginConfig.setBoolean(GerritCloudwatchReporterConfig.KEY_DRYRUN, true);
     globalPluginConfig.setBoolean(GerritCloudwatchReporterConfig.KEY_JVM_METRICS, true);
+    globalPluginConfig.setString(GerritCloudwatchReporterConfig.KEY_APPLICATION_NAME, "appName");
 
     when(configFactory.getFromGerritConfig(PLUGIN_NAME))
         .thenReturn(globalPluginConfig.asPluginConfig());
@@ -79,7 +80,17 @@ public class GerritCloudwatchReporterConfigTest {
     assertThat(reporterConfig.getRate()).isEqualTo(180);
     assertThat(reporterConfig.getDryRun()).isTrue();
     assertThat(reporterConfig.getJvmMetrics()).isTrue();
-    assertThat(reporterConfig.getMaybeInstanceId()).isEqualTo(Optional.of(gerritInstanceId));
+    assertThat(reporterConfig.getMaybeApplicationName()).isEqualTo(Optional.of("appName"));
+  }
+
+  @Test
+  public void shouldSetApplicationNameWithInstanceIdWhenNotOverridden() {
+    when(configFactory.getFromGerritConfig(PLUGIN_NAME))
+        .thenReturn(emptyGlobalPluginConfig.asPluginConfig());
+    reporterConfig =
+        new GerritCloudwatchReporterConfig(configFactory, PLUGIN_NAME, gerritInstanceId);
+
+    assertThat(reporterConfig.getMaybeApplicationName()).isEqualTo(Optional.of(gerritInstanceId));
   }
 
   @Test

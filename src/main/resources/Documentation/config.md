@@ -16,19 +16,6 @@ Find the all the details about the default provider chain
 [here](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html) and
 [here](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html)
 
-## InstanceId Dimension
-
-Gerrit can be optionally configured to have a unique identifier, the
-[instanceId](https://gerrit-review.googlesource.com/Documentation/config-gerrit.html#gerrit.instanceId),
-which represents a specific instance within a group of Gerrit instances.
-
-When the instanceId is set this plugin will hydrate all the metrics sent to CloudWatch with
-an additional dimension named `InstanceId`, populated with the value of the `gerrit.instanceId`
-configuration.
-
-This is useful as it allows to correlate cloudwatch metrics to specific instances
-they originated from.
-
 ## Metrics Reporter
 
 * `plugin.@PLUGIN@.dryRun` (Optional): the reporter will log.DEBUG the metrics,
@@ -53,6 +40,16 @@ ssh -p <port> admin@<server> gerrit logging set-level debug io.github.azagniotov
     * Default: "gerrit"
     * AWS Docs: [Namespaces](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace)
     * Example: "my-gerrit-metrics"
+
+* `plugin.@PLUGIN@.applicationName` (Optional): The name of the application
+  emitting metrics. this plugin will hydrate all the metrics sent to CloudWatch
+  with an additional dimension named `ApplicationName`.
+  * Type: String
+  * Default: The gerrit [instanceId](https://gerrit-review.googlesource.com/Documentation/config-gerrit.html#gerrit.instanceId), when defined. null otherwise.
+  * Example: "gerrit-uk-1"
+  * Notes: This is useful as it allows to correlate cloudwatch metrics to
+    specific instances they originated from. If not set and instanceId is not
+    configured, then metrics will not have any `ApplicationName` dimension.
 
 * `plugin.@PLUGIN@.rate` (Optional): The rate at which metrics should be fired to AWS.
     * Type: Time
