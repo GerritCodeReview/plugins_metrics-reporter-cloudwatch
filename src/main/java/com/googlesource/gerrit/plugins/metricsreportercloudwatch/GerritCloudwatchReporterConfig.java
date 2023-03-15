@@ -32,6 +32,7 @@ import java.util.regex.Pattern;
 
 class GerritCloudwatchReporterConfig {
   protected static final String KEY_NAMESPACE = "namespace";
+  protected static final String KEY_APPLICATION_NAME = "applicationName";
   protected static final String KEY_RATE = "rate";
   protected static final String KEY_DRYRUN = "dryRun";
   protected static final String KEY_INITIAL_DELAY = "initialDelay";
@@ -51,7 +52,7 @@ class GerritCloudwatchReporterConfig {
   private final Boolean dryRun;
   private final MetricFilter exclusionFilter;
   private final Boolean jvmMetrics;
-  private final Optional<String> maybeInstanceId;
+  private final Optional<String> maybeApplicationName;
 
   @Inject
   public GerritCloudwatchReporterConfig(
@@ -60,7 +61,8 @@ class GerritCloudwatchReporterConfig {
       @Nullable @GerritInstanceId String instanceId) {
     PluginConfig pluginConfig = configFactory.getFromGerritConfig(pluginName);
 
-    this.maybeInstanceId = Optional.ofNullable(instanceId);
+    this.maybeApplicationName =
+        Optional.ofNullable(pluginConfig.getString(KEY_APPLICATION_NAME, instanceId));
 
     this.namespace = pluginConfig.getString(KEY_NAMESPACE, DEFAULT_NAMESPACE);
 
@@ -118,7 +120,7 @@ class GerritCloudwatchReporterConfig {
     return (s, metric) -> !filter.test(s);
   }
 
-  public Optional<String> getMaybeInstanceId() {
-    return maybeInstanceId;
+  public Optional<String> getMaybeApplicationName() {
+    return maybeApplicationName;
   }
 }
