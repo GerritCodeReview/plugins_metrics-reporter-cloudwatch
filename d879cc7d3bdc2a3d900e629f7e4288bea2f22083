@@ -16,6 +16,24 @@
       "message": "This is failing due to the usual errorprone on flogger:\n\n```\nERROR: /home/zuul/src/gerrit.googlesource.com/gerrit/plugins/metrics-reporter-cloudwatch/BUILD:10:14: Building plugins/metrics-reporter-cloudwatch/libmetrics-reporter-cloudwatch__plugin-class.jar (3 source files) and running annotation processors (AutoAnnotationProcessor, AutoValueProcessor, AutoOneOfProcessor, AutoValueGsonAdapterFactoryProcessor) failed: (Exit 1): java failed: error executing command external/remotejdk11_linux/bin/java -XX:-CompactStrings \u0027--add-exports\u003djdk.compiler/com.sun.tools.javac.api\u003dALL-UNNAMED\u0027 \u0027--add-exports\u003djdk.compiler/com.sun.tools.javac.main\u003dALL-UNNAMED\u0027 ... (remaining 17 arguments skipped)\nplugins/metrics-reporter-cloudwatch/src/main/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/GerritCloudwatchReporter.java:69: error: [FloggerLogString] Arguments to log(String) must be compile-time constants or parameters annotated with @CompileTimeConstant. If possible, use Flogger\u0027s formatting log methods instead.\n    logger.atInfo().log(\n                       ^\n```\n\nI will fix that separately and rebase this change.\nSetting to WIP for now",
       "revId": "d879cc7d3bdc2a3d900e629f7e4288bea2f22083",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "34159a58_afb04d28",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1149185
+      },
+      "writtenOn": "2023-03-16T15:57:34Z",
+      "side": 1,
+      "message": "what is that?",
+      "parentUuid": "639fa57e_b8712960",
+      "revId": "d879cc7d3bdc2a3d900e629f7e4288bea2f22083",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
