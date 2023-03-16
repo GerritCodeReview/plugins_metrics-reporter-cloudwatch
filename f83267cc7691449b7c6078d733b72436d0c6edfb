@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa3bb5b9_116a9b87",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1149185
+      },
+      "writtenOn": "2023-03-16T15:56:50Z",
+      "side": 1,
+      "message": "Minor comment but looks good to me.",
+      "revId": "f83267cc7691449b7c6078d733b72436d0c6edfb",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a3630eb_223f51e7",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/metricsreportercloudwatch/MetricsReporterCloudwatchIT.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1149185
+      },
+      "writtenOn": "2023-03-16T15:56:50Z",
+      "side": 1,
+      "message": "nit: I dont know if it would make sense to extract to a method:\n```\n          waitUntil(\n              () -\u003e\n                  dryRunMetricsOutput\n                      .metricsStream()\n                      .anyMatch(l -\u003e l.contains(\"MetricName\u003d\" + TEST_JVM_METRIC_NAME)))\n```",
+      "revId": "f83267cc7691449b7c6078d733b72436d0c6edfb",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
