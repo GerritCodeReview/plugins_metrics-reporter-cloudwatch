@@ -1,0 +1,63 @@
+module(name = "gerrit-metrics-reporter-cloudwatch")
+
+bazel_dep(name = "rules_jvm_external", version = "7.0")
+bazel_dep(name = "com_googlesource_gerrit_bazlets")
+git_override(
+    module_name = "com_googlesource_gerrit_bazlets",
+    commit = "7d6806975ed4ea9ecdf04adbb20041f802619519",
+    remote = "https://gerrit.googlesource.com/bazlets",
+)
+
+maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
+
+AWS_SDK_V1_VERSION = "1.11.820"
+
+AWS_SDK_V2_VERSION = "2.13.54"
+
+DROPWIZARD_METRICS_VERSION = "4.1.10.1"
+
+JACKSON_VERSION = "2.11.1"
+
+maven.install(
+    name = "metrics-reporter-cloudwatch_plugin_deps",
+    artifacts = [
+        "com.amazonaws:aws-java-sdk-core:" + AWS_SDK_V1_VERSION,
+        "com.fasterxml.jackson.core:jackson-annotations:" + JACKSON_VERSION,
+        "com.fasterxml.jackson.core:jackson-core:" + JACKSON_VERSION,
+        "com.fasterxml.jackson.core:jackson-databind:" + JACKSON_VERSION,
+        "io.github.azagniotov:dropwizard-metrics-cloudwatch:2.0.5",
+        "io.dropwizard.metrics:metrics-jvm:" + DROPWIZARD_METRICS_VERSION,
+        "io.netty:netty-all:4.1.51.Final",
+        "org.reactivestreams:reactive-streams:1.0.3",
+        "software.amazon.awssdk:auth:" + AWS_SDK_V2_VERSION,
+        "software.amazon.awssdk:aws-core:" + AWS_SDK_V2_VERSION,
+        "software.amazon.awssdk:aws-query-protocol:" + AWS_SDK_V2_VERSION,
+        "software.amazon.awssdk:cloudwatch:" + AWS_SDK_V2_VERSION,
+        "software.amazon.awssdk:http-client-spi:" + AWS_SDK_V2_VERSION,
+        "software.amazon.awssdk:metrics-spi:" + AWS_SDK_V2_VERSION,
+        "software.amazon.awssdk:netty-nio-client:" + AWS_SDK_V2_VERSION,
+        "software.amazon.awssdk:profiles:" + AWS_SDK_V2_VERSION,
+        "software.amazon.awssdk:protocol-core:" + AWS_SDK_V2_VERSION,
+        "software.amazon.awssdk:regions:" + AWS_SDK_V2_VERSION,
+        "software.amazon.awssdk:sdk-core:" + AWS_SDK_V2_VERSION,
+        "software.amazon.awssdk:utils:" + AWS_SDK_V2_VERSION,
+    ],
+    duplicate_version_warning = "error",
+    excluded_artifacts = [
+        "commons-codec:commons-codec",
+        "commons-logging:commons-logging",
+        "io.dropwizard.metrics:metrics-core",
+        "org.apache.httpcomponents:httpclient",
+        "org.apache.httpcomponents:httpcore",
+        "org.slf4j:slf4j-api",
+    ],
+    fail_if_repin_required = True,
+    fail_on_missing_checksum = True,
+    fetch_sources = True,
+    lock_file = "//:metrics-reporter-cloudwatch_plugin_deps.lock.json",
+    repositories = [
+        "https://repo1.maven.org/maven2",
+    ],
+    version_conflict_policy = "pinned",
+)
+use_repo(maven, "metrics-reporter-cloudwatch_plugin_deps")
