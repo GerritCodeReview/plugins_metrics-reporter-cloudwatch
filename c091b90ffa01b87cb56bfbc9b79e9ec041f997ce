@@ -20,6 +20,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1b076340_a0f1f5c2",
+        "filename": "BUILD",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-06-09T17:15:26Z",
+      "side": 1,
+      "message": "Have we trimmed too much deps? The build is failing now, and the allowlist test is failing as well:\n\n```\n@@ -26,8 +26,6 @@\n jackson-datatype-jdk8\n jakarta.activation-api\n jakarta.xml.bind-api\n-javax.activation-api\n-jaxb-api\n joda-time\n kafka-clients\n kafka-streams\n@@ -36,7 +34,6 @@\n lombok-utils\n lz4-java\n metrics-spi\n-netty-all\n netty-buffer\n netty-codec\n netty-codec-http\n@@ -53,7 +50,6 @@\n profiles\n protocol-core\n reactive-streams\n-reactor-core\n regions\n rocksdbjni\n rxjava\n```",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 1
+      },
+      "revId": "c091b90ffa01b87cb56bfbc9b79e9ec041f997ce",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "29999b3e_9cb172bc",
         "filename": "BUILD",
         "patchSetId": 3
