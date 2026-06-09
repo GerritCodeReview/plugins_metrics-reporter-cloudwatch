@@ -53,6 +53,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5850283d_5f8c267f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-06-09T15:41:54Z",
+      "side": 1,
+      "message": "Zuul is currently inherently broken (resource issue of the host). By saying: \n\"The build was green and all test were green!\" I meant running the build and the tests for me locally.\n\nI fetched your change and verified it locally and it worked as expected.",
+      "parentUuid": "8fa20c35_57853f81",
+      "revId": "feea97d29a3d4f0dc8eba387e5a978727b5c4f05",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "490b838d_71839369",
