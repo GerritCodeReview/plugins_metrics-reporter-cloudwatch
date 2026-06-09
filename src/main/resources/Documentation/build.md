@@ -3,12 +3,12 @@
 This plugin can be built with Bazel.
 
 Clone (or link) this plugin to the `plugins` directory of Gerrit's source tree.
-Put the external dependency Bazel build file into the Gerrit /plugins directory,
-replacing the existing empty one.
+Put the external dependency Bazel module fragment into the Gerrit `/plugins`
+directory, replacing the existing empty one.
 
 ```
   cd gerrit/plugins
-  ln -fs metrics-reporter-cloudwatch/external_plugin_deps.bzl .
+  ln -fs metrics-reporter-cloudwatch/external_plugin_deps.MODULE.bazel .
 ```
 
 Then run:
