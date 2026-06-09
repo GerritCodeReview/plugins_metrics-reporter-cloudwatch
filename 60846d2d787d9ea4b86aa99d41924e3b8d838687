@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "181eb82e_d644308f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2026-06-09T11:51:53Z",
+      "side": 1,
+      "message": "Formatting is correct, next change passes.\nThis change failed on zuul because of bazelmod migration.\n\nVerified +1",
+      "revId": "60846d2d787d9ea4b86aa99d41924e3b8d838687",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
