@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "589d608c_e5b04216",
+        "filename": ".bazelversion",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2026-06-09T15:53:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d91764c2_51546267",
+      "revId": "feea97d29a3d4f0dc8eba387e5a978727b5c4f05",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "7dcb3d5a_869380b6",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
@@ -94,6 +112,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e6e8a13_fd42ee15",
+        "filename": "BUILD",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2026-06-09T15:53:08Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "490b838d_71839369",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 1
+      },
+      "revId": "feea97d29a3d4f0dc8eba387e5a978727b5c4f05",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c5dc4eaf_70cc0388",
@@ -107,6 +149,30 @@
       "writtenOn": "2026-06-09T14:18:20Z",
       "side": 1,
       "message": "```suggestion\n    ext_deps \u003d EXT_DEPS,\n```",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 23
+      },
+      "revId": "feea97d29a3d4f0dc8eba387e5a978727b5c4f05",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d45c1ba_443984e8",
+        "filename": "BUILD",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2026-06-09T15:53:08Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "c5dc4eaf_70cc0388",
       "range": {
         "startLine": 24,
         "startChar": 0,
@@ -140,6 +206,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7ab5f2c1_d07a1dd0",
+        "filename": "BUILD",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2026-06-09T15:53:08Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "0d0bd53b_87bf540d",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 23
+      },
+      "revId": "feea97d29a3d4f0dc8eba387e5a978727b5c4f05",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6ada183c_b68d7e3a",
@@ -153,6 +243,30 @@
       "writtenOn": "2026-06-09T14:18:20Z",
       "side": 1,
       "message": "Remove that! If you are passing plugin and ext_deps to gerrit_plugin, the dependency test is generated for you automagically (cool, right 😊)\n\n```suggestion\n\n\n```",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 47
+      },
+      "revId": "feea97d29a3d4f0dc8eba387e5a978727b5c4f05",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b1dfdda_732df176",
+        "filename": "BUILD",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2026-06-09T15:53:08Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "6ada183c_b68d7e3a",
       "range": {
         "startLine": 35,
         "startChar": 0,
@@ -180,6 +294,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "817578b4_55159524",
+        "filename": "MODULE.bazel",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2026-06-09T15:53:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "54b76036_a4bb9b25",
+      "revId": "feea97d29a3d4f0dc8eba387e5a978727b5c4f05",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cdae1954_dd4a103d",
@@ -193,6 +325,30 @@
       "writtenOn": "2026-06-09T14:18:20Z",
       "side": 1,
       "message": "Remove bazlets, you don\u0027t need it.\n\n\n\n```suggestion\nbazel_dep(name \u003d \"rules_jvm_external\", version \u003d \"7.0\")\n```",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 0
+      },
+      "revId": "feea97d29a3d4f0dc8eba387e5a978727b5c4f05",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0998420a_d9c83291",
+        "filename": "MODULE.bazel",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2026-06-09T15:53:08Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "cdae1954_dd4a103d",
       "range": {
         "startLine": 3,
         "startChar": 0,
@@ -226,6 +382,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a60b144_88f11288",
+        "filename": "MODULE.bazel",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2026-06-09T15:53:08Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "3b1e5071_5975c574",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 0
+      },
+      "revId": "feea97d29a3d4f0dc8eba387e5a978727b5c4f05",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "52bc62ed_860f3b90",
@@ -239,6 +419,30 @@
       "writtenOn": "2026-06-09T14:18:20Z",
       "side": 1,
       "message": "The whole reason for this migration is to get the Maven-style ergonomics: declare only the top-level deps and let `rules_jvm_external` pull in the transitive ones. Pinning every transitive artifact here defeats that purpose — the lockfile already handles version stability.\n\nYou\u0027ve found the three needed top level dependencies, used in BUILD file.\n\n```suggestion\n    artifacts \u003d [\n        \"io.github.azagniotov:dropwizard-metrics-cloudwatch:2.0.5\",\n        \"io.dropwizard.metrics:metrics-jvm:4.1.10.1\",\n        \"software.amazon.awssdk:cloudwatch:2.13.54\",\n    ],\n    duplicate_version_warning \u003d \"error\",\n```",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 0
+      },
+      "revId": "feea97d29a3d4f0dc8eba387e5a978727b5c4f05",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0973601d_f09d8ea0",
+        "filename": "MODULE.bazel",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2026-06-09T15:53:08Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "52bc62ed_860f3b90",
       "range": {
         "startLine": 23,
         "startChar": 0,
