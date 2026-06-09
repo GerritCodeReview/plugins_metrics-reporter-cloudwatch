@@ -90,6 +90,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3b80a3e6_486638de",
+        "filename": "BUILD",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-06-09T17:43:34Z",
+      "side": 1,
+      "message": "Remove name, it\u0027s not needed, now, because `plugin` attribute is supplied.\n\n\n\n```suggestion\n    srcs \u003d glob([\"src/test/java/**/*.java\"]),\n```",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 45
+      },
+      "revId": "c091b90ffa01b87cb56bfbc9b79e9ec041f997ce",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e81a6e4a_021ca94d",
         "filename": "MODULE.bazel",
         "patchSetId": 3
