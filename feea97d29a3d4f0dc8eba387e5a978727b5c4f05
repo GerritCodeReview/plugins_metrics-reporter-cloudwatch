@@ -35,6 +35,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8fa20c35_57853f81",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2026-06-09T14:56:01Z",
+      "side": 1,
+      "message": "The CI hadn\u0027t been running for a while, but the build is actually broken [1]\n\n[1] https://gerrit-ci.gerritforge.com/view/Plugins-master/job/plugin-metrics-reporter-cloudwatch-bazel-master/3/console",
+      "parentUuid": "7dcb3d5a_869380b6",
+      "revId": "feea97d29a3d4f0dc8eba387e5a978727b5c4f05",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "490b838d_71839369",
