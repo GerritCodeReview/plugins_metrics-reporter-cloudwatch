@@ -18,6 +18,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "77349a40_e97babcd",
+        "filename": "BUILD",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-06-09T17:46:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3304c6a7_192d4dbd",
+      "revId": "c091b90ffa01b87cb56bfbc9b79e9ec041f997ce",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1b076340_a0f1f5c2",
@@ -88,6 +106,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8296ac44_f37e04bb",
+        "filename": "BUILD",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-06-09T17:46:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "29999b3e_9cb172bc",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 18
+      },
+      "revId": "c091b90ffa01b87cb56bfbc9b79e9ec041f997ce",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3b80a3e6_486638de",
@@ -111,6 +153,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "51176768_fcfabc7a",
+        "filename": "BUILD",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-06-09T17:46:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3b80a3e6_486638de",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 45
+      },
+      "revId": "c091b90ffa01b87cb56bfbc9b79e9ec041f997ce",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e81a6e4a_021ca94d",
@@ -124,6 +190,24 @@
       "writtenOn": "2026-06-09T16:56:31Z",
       "side": 1,
       "message": "Nit: remove bank lines, or reformat with `buildifier`.",
+      "revId": "c091b90ffa01b87cb56bfbc9b79e9ec041f997ce",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6422885_3842081c",
+        "filename": "MODULE.bazel",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-06-09T17:46:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e81a6e4a_021ca94d",
       "revId": "c091b90ffa01b87cb56bfbc9b79e9ec041f997ce",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
