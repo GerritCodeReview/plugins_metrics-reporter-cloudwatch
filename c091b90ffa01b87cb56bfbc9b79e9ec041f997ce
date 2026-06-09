@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9fef59e_a75b90e2",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-06-09T17:16:24Z",
+      "side": 0,
+      "message": "What is wrong here? Currently documented way executes all tests in that package. Now we are adding more tests, and we don\u0027t want to run them all separately.\n\nBTW: that\u0027s exactly what the CI is doing.\n\nYou could optionally remove leading //-prefix, leaving just:\n\n```\nbazelisk test plugins/metrics-reporter-cloudwatch/...\n```\n\nAll three tests are executed (and failing currently on patch set 3 of the previous change):\n\n```\nERROR: Build did NOT complete successfully\n//plugins/events-aws-kinesis:events_aws_kinesis_tests           FAILED TO BUILD\n//plugins/events-aws-kinesis:events-aws-kinesis_dependency_overlap_test  PASSED in 0.2s\n//plugins/events-aws-kinesis:events-aws-kinesis_dependency_allowlist_test FAILED in 0.2s\n```",
+      "revId": "c091b90ffa01b87cb56bfbc9b79e9ec041f997ce",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
