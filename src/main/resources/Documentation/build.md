@@ -37,7 +37,7 @@ The output is created in:
 You can run tests with bazelisk, as such:
 
 ```bash
-bazelisk test //plugins/metrics-reporter-cloudwatch/...
+bazelisk test plugins/metrics-reporter-cloudwatch:metrics-reporter-cloudwatch_tests
 ```
 
 ### Updating Bazel modules
