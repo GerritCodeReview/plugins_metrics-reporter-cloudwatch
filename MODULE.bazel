@@ -1,0 +1,31 @@
+module(name = "gerrit-metrics-reporter-cloudwatch")
+
+bazel_dep(name = "rules_jvm_external", version = "7.0")
+
+maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
+maven.install(
+    name = "metrics-reporter-cloudwatch_plugin_deps",
+    artifacts = [
+        "io.github.azagniotov:dropwizard-metrics-cloudwatch:2.0.5",
+        "io.dropwizard.metrics:metrics-jvm:4.1.10.1",
+        "software.amazon.awssdk:cloudwatch:2.13.54",
+    ],
+    duplicate_version_warning = "error",
+    excluded_artifacts = [
+        "commons-codec:commons-codec",
+        "commons-logging:commons-logging",
+        "io.dropwizard.metrics:metrics-core",
+        "org.apache.httpcomponents:httpclient",
+        "org.apache.httpcomponents:httpcore",
+        "org.slf4j:slf4j-api",
+    ],
+    fail_if_repin_required = True,
+    fail_on_missing_checksum = True,
+    fetch_sources = True,
+    lock_file = "//:metrics-reporter-cloudwatch_plugin_deps.lock.json",
+    repositories = [
+        "https://repo1.maven.org/maven2",
+    ],
+    version_conflict_policy = "pinned",
+)
+use_repo(maven, "metrics-reporter-cloudwatch_plugin_deps")
