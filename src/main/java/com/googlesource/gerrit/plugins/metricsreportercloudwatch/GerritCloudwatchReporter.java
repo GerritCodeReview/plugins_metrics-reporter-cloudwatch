@@ -67,7 +67,8 @@ public class GerritCloudwatchReporter implements LifecycleListener {
   @Override
   public void start() {
     logger.atInfo().log(
-        "Reporting to CloudWatch [namespace:'%s'] at rate of '%d' seconds, after initial delay of %d seconds",
+        "Reporting to CloudWatch [namespace:'%s'] at rate of '%d' seconds, after initial delay of"
+            + " %d seconds",
         config.getNamespace(), config.getRate(), config.getInitialDelay());
     cloudWatchReporter.start(config.getInitialDelay(), config.getRate(), TimeUnit.SECONDS);
   }
