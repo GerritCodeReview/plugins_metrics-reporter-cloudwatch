@@ -16,6 +16,24 @@
       "message": "What is wrong here? Currently documented way executes all tests in that package. Now we are adding more tests, and we don\u0027t want to run them all separately.\n\nBTW: that\u0027s exactly what the CI is doing.\n\nYou could optionally remove leading //-prefix, leaving just:\n\n```\nbazelisk test plugins/metrics-reporter-cloudwatch/...\n```\n\nAll three tests are executed (and failing currently on patch set 3 of the previous change):\n\n```\nERROR: Build did NOT complete successfully\n//plugins/events-aws-kinesis:events_aws_kinesis_tests           FAILED TO BUILD\n//plugins/events-aws-kinesis:events-aws-kinesis_dependency_overlap_test  PASSED in 0.2s\n//plugins/events-aws-kinesis:events-aws-kinesis_dependency_allowlist_test FAILED in 0.2s\n```",
       "revId": "c091b90ffa01b87cb56bfbc9b79e9ec041f997ce",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "184c2889_53241ee7",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2026-06-10T07:53:49Z",
+      "side": 0,
+      "message": "I have erroneously fixed this in the previous change.\nThe documentation said:\n\n```\nYou can run tests with bazelisk, as such:\n\nbazelisk plugins/metrics-reporter-cloudwatch:metrics-reporter-cloudwatch_tests\n```\n\nAs you can see it is missing the word \"test\" from the bazelisk command.\n\n\nThat\u0027s fine anyway, since we were changing the documentation there too.\nAbandoning this one.",
+      "parentUuid": "b9fef59e_a75b90e2",
+      "revId": "c091b90ffa01b87cb56bfbc9b79e9ec041f997ce",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
